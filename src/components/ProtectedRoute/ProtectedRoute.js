@@ -12,7 +12,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
   if (!user) {
     history.push("/login");
 
-    return;
+    return null;
   }
 
   return <Route {...rest} render={(props) => <Component {...props} />} />;

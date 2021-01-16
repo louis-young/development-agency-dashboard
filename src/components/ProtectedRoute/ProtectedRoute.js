@@ -1,21 +1,15 @@
 import React, { useContext } from "react";
 
-import { Route, useHistory } from "react-router-dom";
+import { Redirect, Route } from "react-router-dom";
 
 import { AuthenticationContext } from "../../context/AuthenticationContext";
 
-const ProtectedRoute = ({ component: Component, ...rest }) => {
+import { ROUTES } from "../../constants/constants";
+
+const ProtectedRoute = ({ component: Component, path, exact }) => {
   const { user } = useContext(AuthenticationContext);
 
-  const history = useHistory();
-
-  if (!user) {
-    history.push("/login");
-
-    return null;
-  }
-
-  return <Route {...rest} render={(props) => <Component {...props} />} />;
+  return user ? <Route path={path} exact={exact} component={Component} /> : <Redirect to={ROUTES.LOGIN} />;
 };
 
 export default ProtectedRoute;

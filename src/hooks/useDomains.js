@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { fetchDomains } from "../../api/api";
+import { fetchDomains } from "../api/api";
 
 const useDomains = () => {
   const [loading, setLoading] = useState(false);

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-import useDomains from "../../hooks/domains/useDomains";
+import useDomains from "../../hooks/useDomains";
 
 const Domains = () => {
   const { loading, error, domains } = useDomains();

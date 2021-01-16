@@ -1,9 +1,11 @@
 import React from "react";
 
-import useDomains from "../../hooks/useDomains";
+import useCollection from "../../hooks/useCollection";
+
+import { COLLECTIONS } from "../../constants/constants";
 
 const Domains = () => {
-  const { loading, error, domains } = useDomains();
+  const { loading, error, data: domains } = useCollection(COLLECTIONS.DOMAINS);
 
   return (
     <div>

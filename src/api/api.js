@@ -1,11 +1,11 @@
 import { database } from "../firebase/firebase";
 
-const fetchDomains = () => {
-  const collection = database.collection("domains");
+const fetchCollection = (name) => {
+  const collection = database.collection(name);
 
-  const domains = collection.get();
+  const data = collection.get();
 
-  return domains;
+  return data;
 };
 
-export { fetchDomains };
+export { fetchCollection };

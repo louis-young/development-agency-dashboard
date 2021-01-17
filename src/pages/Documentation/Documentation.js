@@ -20,7 +20,7 @@ const Documentation = () => {
       <ul>
         {documentation &&
           documentation.map((documentation) => (
-            <li key={documentation.domain}>
+            <li key={documentation.title}>
               <p>Title: {documentation.title}</p>
               <p>Description: {documentation.description}</p>
               <p>Content: {documentation.content}</p>

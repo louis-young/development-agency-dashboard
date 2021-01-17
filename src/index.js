@@ -5,17 +5,13 @@ import { AuthenticationProvider } from "./context/AuthenticationContext";
 
 import { BrowserRouter as Router } from "react-router-dom";
 
-import Header from "./layout/Header/Header";
-import Sidebar from "./layout/Sidebar/Sidebar";
-import Routes from "./routes/Routes";
+import Tracker from "./Tracker";
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthenticationProvider>
       <Router>
-        <Header />
-        <Sidebar />
-        <Routes />
+        <Tracker />
       </Router>
     </AuthenticationProvider>
   </React.StrictMode>,

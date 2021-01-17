@@ -3,7 +3,6 @@ const ROUTES = {
   DOMAINS: "/domains",
   PROJECTS: "/projects",
   DOCUMENTATION: "/documentation",
-  LOGIN: "/login",
 };
 
 const COLLECTIONS = {

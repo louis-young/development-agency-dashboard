@@ -14,7 +14,7 @@ import Projects from "../pages/Projects/Projects";
 const Routes = () => {
   return (
     <Switch>
-      <Route path={ROUTES.DASHBOARD} exact component={Dashboard} />
+      <ProtectedRoute path={ROUTES.DASHBOARD} exact component={Dashboard} />
       <ProtectedRoute path={ROUTES.PROJECTS} component={Projects} />
       <ProtectedRoute path={ROUTES.DOMAINS} component={Domains} />
       <ProtectedRoute path={ROUTES.DOCUMENTATION} component={Documentation} />

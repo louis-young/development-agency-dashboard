@@ -5,10 +5,13 @@ import { auth, provider } from "../firebase/firebase";
 const AuthenticationContext = createContext();
 
 const AuthenticationProvider = ({ children }) => {
+  const [authenticating, setAuthenticating] = useState(true);
   const [user, setUser] = useState(null);
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
+      setAuthenticating(false);
+
       if (!user) return;
 
       setUser(user);
@@ -25,7 +28,11 @@ const AuthenticationProvider = ({ children }) => {
     setUser(null);
   };
 
-  return <AuthenticationContext.Provider value={{ user, signIn, signOut }}>{children}</AuthenticationContext.Provider>;
+  return (
+    <AuthenticationContext.Provider value={{ user, authenticating, signIn, signOut }}>
+      {children}
+    </AuthenticationContext.Provider>
+  );
 };
 
 export { AuthenticationContext, AuthenticationProvider };

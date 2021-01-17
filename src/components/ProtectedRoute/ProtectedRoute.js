@@ -4,12 +4,14 @@ import { Redirect, Route } from "react-router-dom";
 
 import { AuthenticationContext } from "../../context/AuthenticationContext";
 
-import { ROUTES } from "../../constants/constants";
-
 const ProtectedRoute = ({ component: Component, path, exact }) => {
-  const { user } = useContext(AuthenticationContext);
+  const { user, authenticating } = useContext(AuthenticationContext);
 
-  return user ? <Route path={path} exact={exact} component={Component} /> : <Redirect to={ROUTES.LOGIN} />;
+  if (authenticating) {
+    return <p>Authenticating...</p>;
+  }
+
+  return user ? <Route path={path} exact={exact} component={Component} /> : <Redirect to="/login" />;
 };
 
 export default ProtectedRoute;

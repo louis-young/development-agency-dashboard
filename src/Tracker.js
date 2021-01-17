@@ -1,6 +1,4 @@
 import React, { useContext } from "react";
-import { Redirect } from "react-router-dom";
-import { ROUTES } from "./constants/constants";
 
 import { AuthenticationContext } from "./context/AuthenticationContext";
 
@@ -10,7 +8,11 @@ import Login from "./pages/Login/Login";
 import Routes from "./routes/Routes";
 
 const Tracker = () => {
-  const { user } = useContext(AuthenticationContext);
+  const { user, authenticating } = useContext(AuthenticationContext);
+
+  if (authenticating) {
+    return <p>Authenticating...</p>;
+  }
 
   if (!user) {
     return <Login />;

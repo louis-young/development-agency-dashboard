@@ -12,15 +12,15 @@ const useCollection = (name) => {
       try {
         setLoading(true);
 
-        const data = await fetchCollection(name);
+        const collection = await fetchCollection(name);
 
-        if (!data.docs.length) {
+        if (!collection.docs.length) {
           throw new Error();
         }
 
-        data.docs.forEach((item) => {
-          setData((data) => [...data, item.data()]);
-        });
+        const data = collection.docs.map((document) => document.data());
+
+        setData(data);
       } catch (error) {
         setError(true);
       } finally {

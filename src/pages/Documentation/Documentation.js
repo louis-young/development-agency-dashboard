@@ -12,6 +12,8 @@ const Documentation = () => {
 
   useTitle(title);
 
+  console.log(documentation);
+
   return (
     <div>
       <h1>Documentation</h1>

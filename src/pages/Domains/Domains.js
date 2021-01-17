@@ -1,11 +1,16 @@
 import React from "react";
 
 import useCollection from "../../hooks/useCollection";
+import useTitle from "../../hooks/useTitle";
 
 import { COLLECTIONS } from "../../constants/constants";
 
+const title = "Tracker • Domains";
+
 const Domains = () => {
   const { loading, error, data: domains } = useCollection(COLLECTIONS.DOMAINS);
+
+  useTitle(title);
 
   return (
     <div>

@@ -1,11 +1,16 @@
 import React from "react";
 
 import useCollection from "../../hooks/useCollection";
+import useTitle from "../../hooks/useTitle";
 
 import { COLLECTIONS } from "../../constants/constants";
 
+const title = "Tracker • Documentation";
+
 const Documentation = () => {
   const { loading, error, data: documentation } = useCollection(COLLECTIONS.DOCUMENTATION);
+
+  useTitle(title);
 
   return (
     <div>

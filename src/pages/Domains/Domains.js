@@ -5,6 +5,8 @@ import useTitle from "../../hooks/useTitle";
 
 import { COLLECTIONS } from "../../constants/constants";
 
+import Domain from "../../components/Domain/Domain";
+
 const title = "Tracker • Domains";
 
 const Domains = () => {
@@ -17,19 +19,7 @@ const Domains = () => {
       <h1>Domains</h1>
       {loading && <p>Loading domains...</p>}
       {error && <p>Error loading domains.</p>}
-      <ul>
-        {domains &&
-          domains.map((domain) => (
-            <li key={domain.id}>
-              <p>Company: {domain.company}</p>
-              <p>Domain: {domain.domain}</p>
-              <p>Email: {domain.email}</p>
-              <p>Name: {domain.name}</p>
-              <p>Provider: {domain.provider}</p>
-              <p>Renewal: {JSON.stringify(domain.renewal, null, 2)}</p>
-            </li>
-          ))}
-      </ul>
+      <ul>{domains && domains.map((domain) => <Domain key={domain.id} data={domain} />)}</ul>
     </div>
   );
 };

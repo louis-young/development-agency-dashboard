@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 import { fetchCollection } from "../api/api";
 
@@ -7,31 +7,35 @@ const useCollection = (name) => {
   const [error, setError] = useState(false);
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    const getCollection = async () => {
-      try {
-        setLoading(true);
+  const getCollection = useCallback(async () => {
+    try {
+      setLoading(true);
 
-        const collection = await fetchCollection(name);
+      const collection = await fetchCollection(name);
 
-        if (!collection.docs.length) {
-          throw new Error();
-        }
-
-        const data = collection.docs.map((document) => ({ id: document.id, ...document.data() }));
-
-        setData(data);
-      } catch (error) {
-        setError(true);
-      } finally {
-        setLoading(false);
+      if (!collection.docs.length) {
+        throw new Error();
       }
-    };
 
+      const data = collection.docs.map((document) => ({ id: document.id, ...document.data() }));
+
+      setData(data);
+    } catch (error) {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  }, [data]);
+
+  useEffect(() => {
     getCollection();
   }, [name]);
 
-  return { loading, error, data };
+  const refetch = () => {
+    getCollection();
+  };
+
+  return { loading, error, data, refetch };
 };
 
 export default useCollection;

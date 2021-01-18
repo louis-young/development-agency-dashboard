@@ -18,7 +18,13 @@ const useCollection = (name) => {
           throw new Error();
         }
 
-        const data = collection.docs.map((document) => document.data());
+        const data = collection.docs.map((document) => {
+          const id = document.id;
+
+          const data = document.data();
+
+          return { id, ...data };
+        });
 
         setData(data);
       } catch (error) {

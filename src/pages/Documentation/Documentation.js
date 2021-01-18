@@ -19,11 +19,11 @@ const Documentation = () => {
       {error && <p>Error loading documentation.</p>}
       <ul>
         {documentation &&
-          documentation.map((documentation) => (
-            <li key={documentation.title}>
-              <p>Title: {documentation.title}</p>
-              <p>Description: {documentation.description}</p>
-              <p>Content: {documentation.content}</p>
+          documentation.map((document) => (
+            <li key={document.id}>
+              <p>Title: {document.title}</p>
+              <p>Description: {document.description}</p>
+              <p>Content: {document.content}</p>
             </li>
           ))}
       </ul>

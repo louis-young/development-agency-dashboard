@@ -20,7 +20,7 @@ const Domains = () => {
       <ul>
         {domains &&
           domains.map((domain) => (
-            <li key={domain.domain}>
+            <li key={domain.id}>
               <p>Company: {domain.company}</p>
               <p>Domain: {domain.domain}</p>
               <p>Email: {domain.email}</p>

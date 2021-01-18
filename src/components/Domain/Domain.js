@@ -1,9 +1,5 @@
 import React from "react";
 
-import { database } from "../../firebase/firebase";
-
-import { COLLECTIONS } from "../../constants/constants";
-
 const Domain = ({ data }) => {
   const { id, company, domain, email, name, provider, renewal } = data;
 

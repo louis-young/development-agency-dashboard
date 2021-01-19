@@ -11,7 +11,7 @@ const title = "Tracker • Documentation";
 const Documentation = () => {
   useTitle(title);
 
-  const { isLoading, error, documentation, addMutation } = useContext(DocumentationContext);
+  const { loading, error, documentation, addMutation } = useContext(DocumentationContext);
 
   const addDocument = () => {
     const document = {
@@ -27,7 +27,7 @@ const Documentation = () => {
     <>
       <h1>Documentation</h1>
       <button onClick={addDocument}>Add</button>
-      {isLoading && <p>Loading documentation...</p>}
+      {loading && <p>Loading documentation...</p>}
       {error && <p>Error loading documentation.</p>}
       <ul>
         {documentation &&

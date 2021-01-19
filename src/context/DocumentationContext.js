@@ -48,12 +48,12 @@ const DocumentationProvider = ({ children }) => {
     },
   });
 
-  const { isLoading, error, data: documentation } = useQuery(COLLECTIONS.DOCUMENTATION, () =>
+  const { isLoading: loading, error, data: documentation } = useQuery(COLLECTIONS.DOCUMENTATION, () =>
     fetchCollection(COLLECTIONS.DOCUMENTATION)
   );
 
   return (
-    <DocumentationContext.Provider value={{ isLoading, error, documentation, addMutation, deleteMutation }}>
+    <DocumentationContext.Provider value={{ loading, error, documentation, addMutation, deleteMutation }}>
       {children}
     </DocumentationContext.Provider>
   );

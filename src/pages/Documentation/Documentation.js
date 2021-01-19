@@ -12,7 +12,7 @@ import Document from "../../components/Document/Document";
 const title = "Tracker • Documentation";
 
 const Documentation = () => {
-  const { loading, error, data: documentation, refetch } = useCollection(COLLECTIONS.DOCUMENTATION);
+  const { loading, error, data: documentation, invalidate } = useCollection(COLLECTIONS.DOCUMENTATION);
 
   useTitle(title);
 
@@ -23,13 +23,13 @@ const Documentation = () => {
       content: "Dolor",
     });
 
-    refetch();
+    invalidate();
   };
 
   const deleteDocument = async (id) => {
     await database.collection(COLLECTIONS.DOCUMENTATION).doc(id).delete();
 
-    refetch();
+    invalidate();
   };
 
   return (

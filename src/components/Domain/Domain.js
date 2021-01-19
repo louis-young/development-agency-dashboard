@@ -1,7 +1,7 @@
 import React from "react";
 
 const Domain = ({ data }) => {
-  const { id, company, domain, email, name, provider, renewal } = data;
+  const { company, domain, email, name, provider, renewal } = data;
 
   const editDomain = () => {};
 

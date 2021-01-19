@@ -8,4 +8,12 @@ const fetchCollection = async (name) => {
   return data;
 };
 
-export { fetchCollection };
+const addDocument = async (collection, document) => {
+  await database.collection(collection).add(document);
+};
+
+const deleteDocument = async (collection, id) => {
+  await database.collection(collection).doc(id).delete();
+};
+
+export { fetchCollection, addDocument, deleteDocument };

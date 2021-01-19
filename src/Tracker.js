@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 import { AuthenticationContext } from "./context/AuthenticationContext";
+import { DocumentationProvider } from "./context/DocumentationContext";
 
 import Header from "./layout/Header/Header";
 import Sidebar from "./layout/Sidebar/Sidebar";
@@ -27,7 +28,9 @@ const Tracker = () => {
       <QueryClientProvider client={queryClient}>
         <Header />
         <Sidebar />
-        <Routes />
+        <DocumentationProvider>
+          <Routes />
+        </DocumentationProvider>
       </QueryClientProvider>
     </>
   );

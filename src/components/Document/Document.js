@@ -1,20 +1,11 @@
 import React from "react";
 
-const Document = ({ data, deleteMutation }) => {
-  const { id, title, description, content } = data;
+import { Link } from "react-router-dom";
 
+const Document = ({ id, title }) => {
   return (
     <li>
-      <p>Title: {title}</p>
-      <p>Description: {description}</p>
-      <p>Content: {content}</p>
-      <button
-        onClick={() => {
-          deleteMutation.mutate(id);
-        }}
-      >
-        Delete
-      </button>
+      <Link to={`/documentation/document/${id}`}>{title}</Link>
     </li>
   );
 };

@@ -1,9 +1,11 @@
 import { database } from "../firebase/firebase";
 
-const fetchCollection = (name) => {
-  const collection = database.collection(name);
+const fetchCollection = async (name) => {
+  const collection = await database.collection(name).get();
 
-  return collection.get();
+  const data = collection.docs.map((document) => ({ id: document.id, ...document.data() }));
+
+  return data;
 };
 
 export { fetchCollection };

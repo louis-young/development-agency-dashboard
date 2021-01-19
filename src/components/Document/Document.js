@@ -1,6 +1,6 @@
 import React from "react";
 
-const Document = ({ data, deleteDocument }) => {
+const Document = ({ data, deleteMutation }) => {
   const { id, title, description, content } = data;
 
   return (
@@ -10,7 +10,7 @@ const Document = ({ data, deleteDocument }) => {
       <p>Content: {content}</p>
       <button
         onClick={() => {
-          deleteDocument(id);
+          deleteMutation.mutate(id);
         }}
       >
         Delete

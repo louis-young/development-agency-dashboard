@@ -1,9 +1,11 @@
 import React from "react";
 
-import useCollection from "../../hooks/useCollection";
-import useTitle from "../../hooks/useTitle";
+import { useQuery, useQueryClient, useMutation } from "react-query";
 
+import { fetchCollection } from "../../api/api";
 import { database } from "../../firebase/firebase";
+
+import useTitle from "../../hooks/useTitle";
 
 import { COLLECTIONS } from "../../constants/constants";
 
@@ -12,39 +14,57 @@ import Document from "../../components/Document/Document";
 const title = "Tracker • Documentation";
 
 const Documentation = () => {
-  const { loading, error, data: documentation, invalidate } = useCollection(COLLECTIONS.DOCUMENTATION);
-
   useTitle(title);
 
-  const addDocument = async () => {
-    await database.collection(COLLECTIONS.DOCUMENTATION).add({
-      title: "Lorem",
-      description: "Ipsum",
-      content: "Dolor",
-    });
+  const queryClient = useQueryClient();
 
-    invalidate();
+  const addDocument = async (document) => {
+    await database.collection(COLLECTIONS.DOCUMENTATION).add(document);
   };
 
   const deleteDocument = async (id) => {
     await database.collection(COLLECTIONS.DOCUMENTATION).doc(id).delete();
-
-    invalidate();
   };
 
+  const addMutation = useMutation(addDocument, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(COLLECTIONS.DOCUMENTATION);
+    },
+  });
+
+  const deleteMutation = useMutation(deleteDocument, {
+    onSuccess: () => {
+      queryClient.invalidateQueries(COLLECTIONS.DOCUMENTATION);
+    },
+  });
+
+  const { isLoading, error, data: documentation } = useQuery(COLLECTIONS.DOCUMENTATION, () =>
+    fetchCollection(COLLECTIONS.DOCUMENTATION)
+  );
+
   return (
-    <div>
+    <>
       <h1>Documentation</h1>
-      <button onClick={addDocument}>Add</button>
-      {loading && <p>Loading documentation...</p>}
+      <button
+        onClick={() => {
+          addMutation.mutate({
+            title: "Lorem",
+            description: "Ipsum",
+            content: "Dolor",
+          });
+        }}
+      >
+        Add
+      </button>
+      {isLoading && <p>Loading documentation...</p>}
       {error && <p>Error loading documentation.</p>}
       <ul>
         {documentation &&
           documentation.map((document) => (
-            <Document key={document.id} data={document} deleteDocument={deleteDocument} />
+            <Document key={document.id} data={document} deleteMutation={deleteMutation} />
           ))}
       </ul>
-    </div>
+    </>
   );
 };
 

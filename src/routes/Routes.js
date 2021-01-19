@@ -16,7 +16,7 @@ const Routes = () => {
       <Route path={ROUTES.DASHBOARD} exact component={Dashboard} />
       <Route path={ROUTES.PROJECTS} component={Projects} />
       <Route path={ROUTES.DOMAINS} component={Domains} />
-      <Route path={`${ROUTES.DOCUMENTATION}/document/:id`} component={Document} />
+      <Route path={ROUTES.DOCUMENT + ":id"} component={Document} />
       <Route path={ROUTES.DOCUMENTATION} component={Documentation} />
     </Switch>
   );

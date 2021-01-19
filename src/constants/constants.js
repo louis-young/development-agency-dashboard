@@ -1,6 +1,7 @@
 const ROUTES = {
   DASHBOARD: "/",
   DOMAINS: "/domains",
+  DOMAIN: "/domains/domain/",
   PROJECTS: "/projects",
   DOCUMENTATION: "/documentation",
   DOCUMENT: "/documentation/document/",

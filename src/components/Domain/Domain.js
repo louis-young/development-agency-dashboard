@@ -1,22 +1,11 @@
 import React from "react";
 
-const Domain = ({ data }) => {
-  const { company, domain, email, name, provider, renewal } = data;
+import { Link } from "react-router-dom";
 
-  const editDomain = () => {};
-
-  const deleteDomain = () => {};
-
+const Domain = ({ id, domain }) => {
   return (
     <li>
-      <p>Company: {company}</p>
-      <p>Domain: {domain}</p>
-      <p>Email: {email}</p>
-      <p>Name: {name}</p>
-      <p>Provider: {provider}</p>
-      <p>Renewal: {JSON.stringify(renewal, null, 2)}</p>
-      <button onClick={editDomain}>Edit</button>
-      <button onClick={deleteDomain}>Delete</button>
+      <Link to={`/domains/domain/${id}`}>{domain}</Link>
     </li>
   );
 };

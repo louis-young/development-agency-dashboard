@@ -4,6 +4,8 @@ import { AuthenticationContext } from "../../context/AuthenticationContext";
 
 import useTitle from "../../hooks/useTitle";
 
+import { getDashboardGreeting } from "../../utilities/utilities";
+
 const title = "Tracker • Dashboard";
 
 const Dashboard = () => {
@@ -13,11 +15,15 @@ const Dashboard = () => {
 
   useTitle(title);
 
+  const greeting = getDashboardGreeting();
+
   return (
     <div>
       <h1>Dashboard</h1>
 
-      <p>Hello {name}.</p>
+      <p>
+        Good {greeting}, {name}.
+      </p>
     </div>
   );
 };

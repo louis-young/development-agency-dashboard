@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import { useQuery, useQueryClient, useMutation } from "react-query";
 
-import { addDocument, deleteDocument, fetchCollection } from "../api/api";
+import { addDocument, editDocument, deleteDocument, fetchCollection } from "../api/api";
 
 import { COLLECTIONS, ROUTES } from "../constants/constants";
 
@@ -24,6 +24,15 @@ const DomainsProvider = ({ children }) => {
     },
   });
 
+  const editMutation = useMutation((document) => editDocument(COLLECTIONS.DOMAINS, document), {
+    onSuccess: () => {
+      queryClient.invalidateQueries(COLLECTIONS.DOMAINS);
+    },
+    onError: () => {
+      alert("Error editing domain.");
+    },
+  });
+
   const deleteMutation = useMutation((id) => deleteDocument(COLLECTIONS.DOMAINS, id), {
     onSuccess: () => {
       queryClient.invalidateQueries(COLLECTIONS.DOMAINS);
@@ -40,7 +49,7 @@ const DomainsProvider = ({ children }) => {
   );
 
   return (
-    <DomainsContext.Provider value={{ loading, error, domains, addMutation, deleteMutation }}>
+    <DomainsContext.Provider value={{ loading, error, domains, addMutation, editMutation, deleteMutation }}>
       {children}
     </DomainsContext.Provider>
   );

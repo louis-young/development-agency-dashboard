@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 import { ROUTES } from "../../constants/constants";
 
@@ -15,17 +15,35 @@ const initialFields = {
   renewal: "",
 };
 
-const AddDomain = () => {
-  const [fields, setFields] = useState(initialFields);
-
-  const { addMutation } = useContext(DomainsContext);
+const DomainActions = () => {
+  const { id } = useParams();
 
   const history = useHistory();
+
+  const editing = id;
+
+  const [fields, setFields] = useState(initialFields);
+
+  const { domains, editMutation, addMutation } = useContext(DomainsContext);
+
+  const domainToEdit = domains?.find((domain) => domain.id === id); // Bad loading handle.
+
+  useEffect(() => {
+    if (!domainToEdit) {
+      return;
+    }
+
+    setFields(domainToEdit);
+  }, [domainToEdit]);
 
   const addDomain = (event) => {
     event.preventDefault();
 
-    addMutation.mutate(fields);
+    if (editing) {
+      editMutation.mutate(fields);
+    } else {
+      addMutation.mutate(fields);
+    }
 
     history.push(ROUTES.DOMAINS);
   };
@@ -41,7 +59,7 @@ const AddDomain = () => {
 
   return (
     <div>
-      <h1>Add Domain</h1>
+      <h1>{editing ? "Edit" : "Add"} Domain</h1>
 
       <form onSubmit={addDomain}>
         <label>
@@ -74,10 +92,10 @@ const AddDomain = () => {
           <input name="renewal" type="date" value={fields.renewal} onChange={handleInputChange} />
         </label>
 
-        <button type="submit">Add Domain</button>
+        <button type="submit">{editing ? "Edit" : "Add"} Domain</button>
       </form>
     </div>
   );
 };
 
-export default AddDomain;
+export default DomainActions;

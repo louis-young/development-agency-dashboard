@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { DomainsContext } from "../../context/DomainsContext";
 
@@ -33,6 +33,7 @@ const Domain = () => {
       <p>Provider: {provider}</p>
       <p>Renewal: {renewal}</p>
 
+      <Link to={`/domains/edit/${id}`}>Edit</Link>
       <button onClick={deleteDomain}>Delete</button>
     </section>
   );

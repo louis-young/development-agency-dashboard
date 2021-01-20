@@ -26,15 +26,15 @@ const DomainActions = () => {
 
   const { domains, editMutation, addMutation } = useContext(DomainsContext);
 
-  const domainToEdit = domains?.find((domain) => domain.id === id); // TODO: Revisit the optional chaining operator - poor way to handle loading.
+  const editableDomain = domains?.find((domain) => domain.id === id); // TODO: Revisit the optional chaining operator - poor way to handle loading.
 
   useEffect(() => {
-    if (!domainToEdit) {
+    if (!editableDomain) {
       return;
     }
 
-    setFields(domainToEdit);
-  }, [domainToEdit]);
+    setFields(editableDomain);
+  }, [editableDomain]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -57,7 +57,7 @@ const DomainActions = () => {
     }));
   };
 
-  if (editing && !domainToEdit) {
+  if (editing && !editableDomain) {
     return <p>No domain found.</p>;
   }
 

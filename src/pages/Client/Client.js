@@ -24,7 +24,7 @@ const Client = () => {
     return <p>No client found.</p>;
   }
 
-  const { company, contact } = client;
+  const { company, contact, email, phone } = client;
 
   const deleteClient = () => {
     deleteMutation.mutate(id);
@@ -38,6 +38,8 @@ const Client = () => {
 
       <p>Company: {company}</p>
       <p>Contact: {contact}</p>
+      <p>Email: {email}</p>
+      <p>Phone: {phone}</p>
 
       <h2>Domains</h2>
 

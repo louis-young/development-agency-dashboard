@@ -9,6 +9,8 @@ import { ClientsContext } from "../../context/ClientsContext";
 const initialFields = {
   company: "",
   contact: "",
+  phone: "",
+  email: "",
 };
 
 const ClientActions = () => {
@@ -66,12 +68,22 @@ const ClientActions = () => {
       <form onSubmit={handleSubmit}>
         <label>
           Company
-          <input name="company" type="text" value={fields.company} onChange={handleInputChange} />
+          <input name="company" type="text" value={fields.company} onChange={handleInputChange} required />
         </label>
 
         <label>
           Contact
-          <input name="contact" type="text" value={fields.contact} onChange={handleInputChange} />
+          <input name="contact" type="text" value={fields.contact} onChange={handleInputChange} required />
+        </label>
+
+        <label>
+          Email
+          <input name="email" type="email" value={fields.email} onChange={handleInputChange} required />
+        </label>
+
+        <label>
+          Phone
+          <input name="phone" type="tel" value={fields.phone} onChange={handleInputChange} required />
         </label>
 
         <button type="submit">{action} Client</button>

@@ -26,7 +26,7 @@ const DomainActions = () => {
 
   const { domains, editMutation, addMutation } = useContext(DomainsContext);
 
-  const domainToEdit = domains?.find((domain) => domain.id === id); // Bad loading handle.
+  const domainToEdit = domains?.find((domain) => domain.id === id); // TODO: Revisit the optional chaining operator - poor way to handle loading.
 
   useEffect(() => {
     if (!domainToEdit) {

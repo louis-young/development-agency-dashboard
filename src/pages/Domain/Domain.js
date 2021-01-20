@@ -31,7 +31,7 @@ const Domain = () => {
       <p>Email: {email}</p>
       <p>Name: {name}</p>
       <p>Provider: {provider}</p>
-      <p>Renewal: {JSON.stringify(renewal, false, 2)}</p>
+      <p>Renewal: {renewal}</p>
 
       <button onClick={deleteDomain}>Delete</button>
     </section>

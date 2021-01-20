@@ -2,6 +2,8 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
+import { ROUTES } from "../../constants/constants";
+
 const Sidebar = () => {
   return (
     <aside>
@@ -9,13 +11,17 @@ const Sidebar = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/">Dashboard</Link>
+            <Link to={ROUTES.DASHBOARD}>Dashboard</Link>
           </li>
           <li>
-            <Link to="/domains">Domains</Link>
+            <Link to={ROUTES.CLIENTS}>Clients</Link>
           </li>
           <li>
-            <Link to="/documentation">Documentation</Link>
+            <Link to={ROUTES.DOMAINS}>Domains</Link>
+          </li>
+
+          <li>
+            <Link to={ROUTES.DOCUMENTATION}>Documentation</Link>
           </li>
         </ul>
       </nav>

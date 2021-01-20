@@ -4,6 +4,8 @@ import { Link, useParams } from "react-router-dom";
 
 import { DomainsContext } from "../../context/DomainsContext";
 
+import { ROUTES } from "../../constants/constants";
+
 const Domain = () => {
   const { id } = useParams();
 
@@ -37,7 +39,7 @@ const Domain = () => {
       <p>Provider: {provider}</p>
       <p>Renewal: {renewal}</p>
 
-      <Link to={`/domains/${id}/edit`}>Edit</Link>
+      <Link to={`${ROUTES.DOMAINS}/${id}/edit`}>Edit</Link>
       <button onClick={deleteDomain}>Delete</button>
     </section>
   );

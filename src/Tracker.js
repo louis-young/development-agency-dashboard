@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 import { AuthenticationContext } from "./context/AuthenticationContext";
+import { ClientsProvider } from "./context/ClientsContext";
 import { DocumentationProvider } from "./context/DocumentationContext";
 import { DomainsProvider } from "./context/DomainsContext";
 
@@ -31,7 +32,9 @@ const Tracker = () => {
         <Sidebar />
         <DocumentationProvider>
           <DomainsProvider>
-            <Routes />
+            <ClientsProvider>
+              <Routes />
+            </ClientsProvider>
           </DomainsProvider>
         </DocumentationProvider>
       </QueryClientProvider>

@@ -57,6 +57,10 @@ const DomainActions = () => {
     }));
   };
 
+  if (editing && !domainToEdit) {
+    return <p>No domain found.</p>;
+  }
+
   return (
     <div>
       <h1>{editing ? "Edit" : "Add"} Domain</h1>

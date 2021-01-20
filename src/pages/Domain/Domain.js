@@ -15,6 +15,10 @@ const Domain = () => {
 
   const domain = domains.find((domain) => domain.id === id);
 
+  if (!domain) {
+    return <p>No domain found.</p>;
+  }
+
   const { domain: url, company, email, name, provider, renewal } = domain;
 
   const deleteDomain = () => {

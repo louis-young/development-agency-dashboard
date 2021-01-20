@@ -10,7 +10,7 @@ const Domain = () => {
   const { domains, deleteMutation } = useContext(DomainsContext);
 
   if (!domains) {
-    return <p>Loading...</p>;
+    return <p>Loading domain...</p>;
   }
 
   const domain = domains.find((domain) => domain.id === id);

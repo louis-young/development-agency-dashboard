@@ -9,6 +9,10 @@ const Document = () => {
 
   const { documentation, deleteMutation } = useContext(DocumentationContext);
 
+  if (!documentation) {
+    return <p>Loading document...</p>;
+  }
+
   const document = documentation.find((document) => document.id === id);
 
   const { title, description, content } = document;

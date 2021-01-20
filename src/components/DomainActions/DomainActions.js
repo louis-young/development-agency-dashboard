@@ -36,7 +36,7 @@ const DomainActions = () => {
     setFields(domainToEdit);
   }, [domainToEdit]);
 
-  const addDomain = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
     if (editing) {
@@ -61,7 +61,7 @@ const DomainActions = () => {
     <div>
       <h1>{editing ? "Edit" : "Add"} Domain</h1>
 
-      <form onSubmit={addDomain}>
+      <form onSubmit={handleSubmit}>
         <label>
           Company
           <input name="company" type="text" value={fields.company} onChange={handleInputChange} />

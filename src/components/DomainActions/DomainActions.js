@@ -91,7 +91,7 @@ const DomainActions = () => {
         </label>
 
         <label>
-          Provider
+          Platform
           <input name="platform" type="text" value={fields.platform} onChange={handleInputChange} required />
         </label>
 

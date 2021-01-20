@@ -8,7 +8,7 @@ import useTitle from "../../hooks/useTitle";
 
 import { ROUTES } from "../../constants/constants";
 
-import Domain from "../../components/Domain/Domain";
+import DomainsList from "../../components/DomainsList/DomainsList";
 
 const title = "Tracker • Domains";
 
@@ -21,9 +21,8 @@ const Domains = () => {
     <div>
       <h1>Domains</h1>
       <Link to={`${ROUTES.DOMAINS}/add`}>Add</Link>
-      {loading && <p>Loading domains...</p>}
-      {error && <p>Error loading domains.</p>}
-      <ul>{domains && domains.map((domain) => <Domain key={domain.id} id={domain.id} domain={domain.domain} />)}</ul>
+
+      <DomainsList loading={loading} error={error} domains={domains} />
     </div>
   );
 };

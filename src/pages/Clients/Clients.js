@@ -8,7 +8,7 @@ import useTitle from "../../hooks/useTitle";
 
 import { ROUTES } from "../../constants/constants";
 
-import Client from "../../components/Client/Client";
+import ClientsList from "../../components/ClientsList/ClientsList";
 
 const title = "Tracker • Clients";
 
@@ -21,9 +21,8 @@ const Clients = () => {
     <div>
       <h1>Clients</h1>
       <Link to={`${ROUTES.CLIENTS}/add`}>Add</Link>
-      {loading && <p>Loading clients...</p>}
-      {error && <p>Error loading clients.</p>}
-      <ul>{clients && clients.map((client) => <Client key={client.id} id={client.id} client={client.company} />)}</ul>
+
+      <ClientsList loading={loading} error={error} clients={clients} />
     </div>
   );
 };

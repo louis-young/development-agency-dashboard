@@ -7,6 +7,8 @@ import { DomainsContext } from "../../context/DomainsContext";
 
 import { ROUTES } from "../../constants/constants";
 
+import DomainsList from "../../components/DomainsList/DomainsList";
+
 const Client = () => {
   const { id } = useParams();
 
@@ -43,13 +45,7 @@ const Client = () => {
 
       <h2>Domains</h2>
 
-      <ul>
-        {clientDomains.map((domain) => (
-          <li>
-            <Link to={`${ROUTES.DOMAINS}/${domain.id}`}>{domain.domain}</Link>{" "}
-          </li>
-        ))}
-      </ul>
+      <DomainsList domains={clientDomains} />
 
       <Link to={`${ROUTES.CLIENTS}/${id}/edit`}>Edit</Link>
       <button onClick={deleteClient}>Delete</button>

@@ -61,9 +61,11 @@ const DomainActions = () => {
     return <p>No domain found.</p>;
   }
 
+  const action = editing ? "Edit" : "Add";
+
   return (
     <div>
-      <h1>{editing ? "Edit" : "Add"} Domain</h1>
+      <h1>{action} Domain</h1>
 
       <form onSubmit={handleSubmit}>
         <label>
@@ -96,7 +98,7 @@ const DomainActions = () => {
           <input name="renewal" type="date" value={fields.renewal} onChange={handleInputChange} />
         </label>
 
-        <button type="submit">{editing ? "Edit" : "Add"} Domain</button>
+        <button type="submit">{action} Domain</button>
       </form>
     </div>
   );

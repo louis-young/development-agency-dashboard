@@ -12,9 +12,6 @@ const Sidebar = () => {
             <Link to="/">Dashboard</Link>
           </li>
           <li>
-            <Link to="/projects">Projects</Link>
-          </li>
-          <li>
             <Link to="/domains">Domains</Link>
           </li>
           <li>

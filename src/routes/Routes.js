@@ -7,7 +7,6 @@ import { ROUTES } from "../constants/constants";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import Documentation from "../pages/Documentation/Documentation";
 import Domains from "../pages/Domains/Domains";
-import Projects from "../pages/Projects/Projects";
 import Document from "../pages/Document/Document";
 import Domain from "../pages/Domain/Domain";
 import DomainActions from "../components/DomainActions/DomainActions";
@@ -16,7 +15,6 @@ const Routes = () => {
   return (
     <Switch>
       <Route path={ROUTES.DASHBOARD} exact component={Dashboard} />
-      <Route path={ROUTES.PROJECTS} component={Projects} />
       <Route path={`${ROUTES.DOMAINS}/add`} component={DomainActions} />
       <Route path={`${ROUTES.DOMAINS}/:id/edit`} component={DomainActions} />
       <Route path={`${ROUTES.DOMAINS}/:id`} component={Domain} />

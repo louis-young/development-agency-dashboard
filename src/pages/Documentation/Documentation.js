@@ -15,17 +15,7 @@ const title = "Tracker • Documentation";
 const Documentation = () => {
   useTitle(title);
 
-  const { loading, error, documentation, addMutation } = useContext(DocumentationContext);
-
-  const addDocument = () => {
-    const document = {
-      title: "Lorem",
-      description: "Ipsum",
-      content: "Dolor",
-    };
-
-    addMutation.mutate(document);
-  };
+  const { loading, error, documentation } = useContext(DocumentationContext);
 
   return (
     <>

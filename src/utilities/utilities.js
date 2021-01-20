@@ -9,8 +9,6 @@ const getDashboardGreeting = () => {
 
   const evening = hours >= 18;
 
-  console.log(hours);
-
   if (morning) {
     return "Morning";
   }

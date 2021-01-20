@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import { useQuery, useQueryClient, useMutation } from "react-query";
 
-import { addDocument, editDocument, deleteDocument, fetchCollection } from "../api/api";
+import { addDocument, editDocument, deleteDocument, getCollection } from "../api/api";
 
 import { COLLECTIONS, ROUTES } from "../constants/constants";
 
@@ -45,7 +45,7 @@ const ClientsProvider = ({ children }) => {
   });
 
   const { isLoading: loading, error, data: clients } = useQuery(COLLECTIONS.CLIENTS, () =>
-    fetchCollection(COLLECTIONS.CLIENTS)
+    getCollection(COLLECTIONS.CLIENTS)
   );
 
   return (

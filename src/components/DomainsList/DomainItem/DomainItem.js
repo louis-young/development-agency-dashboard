@@ -2,9 +2,9 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import { ROUTES } from "../../constants/constants";
+import { ROUTES } from "../../../constants/constants";
 
-const Domain = ({ id, domain }) => {
+const DomainItem = ({ id, domain }) => {
   return (
     <li>
       <Link to={`${ROUTES.DOMAINS}/${id}`}>{domain}</Link>
@@ -12,4 +12,4 @@ const Domain = ({ id, domain }) => {
   );
 };
 
-export default Domain;
+export default DomainItem;

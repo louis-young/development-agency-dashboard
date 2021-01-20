@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import { useQuery, useQueryClient, useMutation } from "react-query";
 
-import { addDocument, editDocument, deleteDocument, fetchCollection } from "../api/api";
+import { addDocument, editDocument, deleteDocument, getCollection } from "../api/api";
 
 import { COLLECTIONS, ROUTES } from "../constants/constants";
 
@@ -45,7 +45,7 @@ const DomainsProvider = ({ children }) => {
   });
 
   const { isLoading: loading, error, data: domains } = useQuery(COLLECTIONS.DOMAINS, () =>
-    fetchCollection(COLLECTIONS.DOMAINS)
+    getCollection(COLLECTIONS.DOMAINS)
   );
 
   return (

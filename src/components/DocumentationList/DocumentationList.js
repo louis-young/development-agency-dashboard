@@ -1,6 +1,6 @@
 import React from "react";
 
-import Document from "../Document/Document";
+import DocumentItem from "./DocumentItem/DocumentItem";
 
 const DocumentationList = ({ loading, error, documentation }) => {
   if (loading) {
@@ -18,7 +18,7 @@ const DocumentationList = ({ loading, error, documentation }) => {
   return (
     <ul>
       {documentation.map((document) => (
-        <Document key={document.id} id={document.id} title={document.title} />
+        <DocumentItem key={document.id} id={document.id} title={document.title} />
       ))}
     </ul>
   );

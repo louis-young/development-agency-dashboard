@@ -1,6 +1,6 @@
 import React from "react";
 
-import Client from "../Client/Client";
+import ClientItem from "./ClientItem/ClientItem";
 
 const ClientsList = ({ loading, error, clients }) => {
   if (loading) {
@@ -18,7 +18,7 @@ const ClientsList = ({ loading, error, clients }) => {
   return (
     <ul>
       {clients.map((client) => (
-        <Client key={client.id} id={client.id} client={client.company} />
+        <ClientItem key={client.id} id={client.id} client={client.company} />
       ))}
     </ul>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 
-import Domain from "../Domain/Domain";
+import DomainItem from "./DomainItem/DomainItem";
 
 const DomainsList = ({ loading, error, domains }) => {
   if (loading) {
@@ -18,7 +18,7 @@ const DomainsList = ({ loading, error, domains }) => {
   return (
     <ul>
       {domains.map((domain) => (
-        <Domain key={domain.id} id={domain.id} domain={domain.domain} />
+        <DomainItem key={domain.id} id={domain.id} domain={domain.domain} />
       ))}
     </ul>
   );

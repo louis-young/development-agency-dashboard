@@ -2,9 +2,9 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import { ROUTES } from "../../constants/constants";
+import { ROUTES } from "../../../constants/constants";
 
-const Client = ({ id, client }) => {
+const ClientItem = ({ id, client }) => {
   return (
     <li>
       <Link to={`${ROUTES.CLIENTS}/${id}`}>{client}</Link>
@@ -12,4 +12,4 @@ const Client = ({ id, client }) => {
   );
 };
 
-export default Client;
+export default ClientItem;

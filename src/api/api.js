@@ -1,6 +1,6 @@
 import { database } from "../firebase/firebase";
 
-const fetchCollection = async (name) => {
+const getCollection = async (name) => {
   const collection = await database.collection(name).get();
 
   const data = collection.docs.map((document) => ({ id: document.id, ...document.data() }));
@@ -20,4 +20,4 @@ const deleteDocument = async (collection, id) => {
   await database.collection(collection).doc(id).delete();
 };
 
-export { fetchCollection, addDocument, deleteDocument, editDocument };
+export { getCollection, addDocument, deleteDocument, editDocument };

@@ -1,4 +1,4 @@
-const getDashboardGreeting = () => {
+const getTimeOfDay = () => {
   const date = new Date();
 
   const hours = date.getHours();
@@ -22,4 +22,4 @@ const getDashboardGreeting = () => {
   }
 };
 
-export { getDashboardGreeting };
+export { getTimeOfDay };

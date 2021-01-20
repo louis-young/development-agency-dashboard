@@ -10,6 +10,7 @@ import Domains from "../pages/Domains/Domains";
 import Projects from "../pages/Projects/Projects";
 import Document from "../pages/Document/Document";
 import Domain from "../pages/Domain/Domain";
+import AddDomain from "../components/AddDomain/AddDomain";
 
 const Routes = () => {
   return (
@@ -17,6 +18,7 @@ const Routes = () => {
       <Route path={ROUTES.DASHBOARD} exact component={Dashboard} />
       <Route path={ROUTES.PROJECTS} component={Projects} />
       <Route path={`${ROUTES.DOMAIN}:id`} component={Domain} />
+      <Route path={`${ROUTES.DOMAINS}/add`} component={AddDomain} />
       <Route path={ROUTES.DOMAINS} component={Domains} />
       <Route path={`${ROUTES.DOCUMENT}:id`} component={Document} />
       <Route path={ROUTES.DOCUMENTATION} component={Documentation} />

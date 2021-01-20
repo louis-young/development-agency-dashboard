@@ -24,7 +24,7 @@ const Domain = () => {
     return <p>No domain found.</p>;
   }
 
-  const { domain: url, company, email, name, provider, renewal } = domain;
+  const { domain: url, company, platform, renewal } = domain;
 
   const deleteDomain = () => {
     deleteMutation.mutate(id);
@@ -41,9 +41,7 @@ const Domain = () => {
       <p>
         Company: <Link to={`${ROUTES.CLIENTS}/${client.id}`}>{client.company}</Link>
       </p>
-      <p>Email: {email}</p>
-      <p>Name: {name}</p>
-      <p>Provider: {provider}</p>
+      <p>Platform: {platform}</p>
       <p>Renewal: {renewal}</p>
 
       <Link to={`${ROUTES.DOMAINS}/${id}/edit`}>Edit</Link>

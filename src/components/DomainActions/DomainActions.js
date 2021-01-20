@@ -12,7 +12,7 @@ const initialFields = {
   domain: "",
   email: "",
   name: "",
-  provider: "",
+  platform: "",
   renewal: "",
 };
 
@@ -75,7 +75,7 @@ const DomainActions = () => {
       <form onSubmit={handleSubmit}>
         <label>
           Company
-          <select name="company" defaultValue={defaultValue} onChange={handleInputChange}>
+          <select name="company" defaultValue={defaultValue} onChange={handleInputChange} required>
             {!editableDomain && <option value="">Select a company...</option>}
             {clients?.map((client) => (
               <option key={client.id} value={client.id}>
@@ -87,27 +87,17 @@ const DomainActions = () => {
 
         <label>
           Domain
-          <input name="domain" type="text" value={fields.domain} onChange={handleInputChange} />
-        </label>
-
-        <label>
-          Email
-          <input name="email" type="email" value={fields.email} onChange={handleInputChange} />
-        </label>
-
-        <label>
-          Name
-          <input name="name" type="text" value={fields.name} onChange={handleInputChange} />
+          <input name="domain" type="text" value={fields.domain} onChange={handleInputChange} required />
         </label>
 
         <label>
           Provider
-          <input name="provider" type="text" value={fields.provider} onChange={handleInputChange} />
+          <input name="platform" type="text" value={fields.platform} onChange={handleInputChange} required />
         </label>
 
         <label>
           Renewal
-          <input name="renewal" type="date" value={fields.renewal} onChange={handleInputChange} />
+          <input name="renewal" type="date" value={fields.renewal} onChange={handleInputChange} required />
         </label>
 
         <button type="submit">{action} Domain</button>

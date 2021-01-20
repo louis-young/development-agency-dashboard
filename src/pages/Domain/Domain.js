@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import { DomainsContext } from "../../context/DomainsContext";
+import { ClientsContext } from "../../context/ClientsContext";
 
 import { ROUTES } from "../../constants/constants";
 
@@ -10,6 +11,8 @@ const Domain = () => {
   const { id } = useParams();
 
   const { domains, deleteMutation } = useContext(DomainsContext);
+
+  const { clients } = useContext(ClientsContext);
 
   if (!domains) {
     return <p>Loading domain...</p>;
@@ -27,13 +30,17 @@ const Domain = () => {
     deleteMutation.mutate(id);
   };
 
+  const client = clients.find((client) => client.id === company); // TODO: Refactor.
+
   return (
     <section>
       <h1>Domain</h1>
 
       <h2>{url}</h2>
 
-      <p>Company: {company}</p>
+      <p>
+        Company: <Link to={`${ROUTES.CLIENTS}/${client.id}`}>{client.company}</Link>
+      </p>
       <p>Email: {email}</p>
       <p>Name: {name}</p>
       <p>Provider: {provider}</p>

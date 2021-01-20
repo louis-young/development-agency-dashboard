@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { DocumentationContext } from "../../context/DocumentationContext";
+
+import { ROUTES } from "../../constants/constants";
 
 const Document = () => {
   const { id } = useParams();
@@ -30,6 +32,7 @@ const Document = () => {
       <p>{description}</p>
       <p>{content}</p>
 
+      <Link to={`${ROUTES.DOCUMENTATION}/${id}/edit`}>Edit</Link>
       <button onClick={deleteDocument}>Delete</button>
     </section>
   );

@@ -7,7 +7,7 @@ import { ROUTES } from "../../constants/constants";
 const Document = ({ id, title }) => {
   return (
     <li>
-      <Link to={`${ROUTES.DOCUMENT}${id}`}>{title}</Link>
+      <Link to={`${ROUTES.DOCUMENTATION}/${id}`}>{title}</Link>
     </li>
   );
 };

@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import { useQuery, useQueryClient, useMutation } from "react-query";
 
-import { addDocument, deleteDocument, fetchCollection } from "../api/api";
+import { addDocument, editDocument, deleteDocument, fetchCollection } from "../api/api";
 
 import { COLLECTIONS, ROUTES } from "../constants/constants";
 
@@ -24,6 +24,15 @@ const DocumentationProvider = ({ children }) => {
     },
   });
 
+  const editMutation = useMutation((document) => editDocument(COLLECTIONS.DOCUMENTATION, document), {
+    onSuccess: () => {
+      queryClient.invalidateQueries(COLLECTIONS.DOCUMENTATION);
+    },
+    onError: () => {
+      alert("Error editing document.");
+    },
+  });
+
   const deleteMutation = useMutation((id) => deleteDocument(COLLECTIONS.DOCUMENTATION, id), {
     onSuccess: () => {
       queryClient.invalidateQueries(COLLECTIONS.DOCUMENTATION);
@@ -40,7 +49,7 @@ const DocumentationProvider = ({ children }) => {
   );
 
   return (
-    <DocumentationContext.Provider value={{ loading, error, documentation, addMutation, deleteMutation }}>
+    <DocumentationContext.Provider value={{ loading, error, documentation, addMutation, deleteMutation, editMutation }}>
       {children}
     </DocumentationContext.Provider>
   );

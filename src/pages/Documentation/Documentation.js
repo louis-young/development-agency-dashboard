@@ -1,10 +1,14 @@
 import React, { useContext } from "react";
 
+import { Link } from "react-router-dom";
+
 import { DocumentationContext } from "../../context/DocumentationContext";
 
 import useTitle from "../../hooks/useTitle";
 
-import Document from "../../components/Document/Document";
+import { ROUTES } from "../../constants/constants";
+
+import DocumentationList from "../../components/DocumentationList/DocumentationList";
 
 const title = "Tracker • Documentation";
 
@@ -26,13 +30,9 @@ const Documentation = () => {
   return (
     <>
       <h1>Documentation</h1>
-      <button onClick={addDocument}>Add</button>
-      {loading && <p>Loading documentation...</p>}
-      {error && <p>Error loading documentation.</p>}
-      <ul>
-        {documentation &&
-          documentation.map((document) => <Document key={document.id} id={document.id} title={document.title} />)}
-      </ul>
+      <Link to={`${ROUTES.DOCUMENTATION}/add`}>Add</Link>
+
+      <DocumentationList loading={loading} error={error} documentation={documentation} />
     </>
   );
 };

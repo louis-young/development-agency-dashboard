@@ -37,7 +37,7 @@ const Domain = () => {
       <p>Provider: {provider}</p>
       <p>Renewal: {renewal}</p>
 
-      <Link to={`/domains/edit/${id}`}>Edit</Link>
+      <Link to={`/domains/${id}/edit`}>Edit</Link>
       <button onClick={deleteDomain}>Delete</button>
     </section>
   );

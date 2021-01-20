@@ -7,7 +7,7 @@ import { ROUTES } from "../../constants/constants";
 const Domain = ({ id, domain }) => {
   return (
     <li>
-      <Link to={`${ROUTES.DOMAIN}${id}`}>{domain}</Link>
+      <Link to={`${ROUTES.DOMAINS}/${id}`}>{domain}</Link>
     </li>
   );
 };

@@ -7,6 +7,8 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import Tracker from "./Tracker";
 
+import "./stylesheets/main.scss";
+
 ReactDOM.render(
   <React.StrictMode>
     <AuthenticationProvider>

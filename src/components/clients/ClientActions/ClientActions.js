@@ -24,7 +24,7 @@ const ClientActions = () => {
 
   const { clients, editMutation, addMutation } = useContext(ClientsContext);
 
-  const editableClient = clients?.find((client) => client.id === id); // TODO: Revisit the optional chaining operator - poor way to handle loading.
+  const editableClient = clients?.find((client) => client.id === id);
 
   useEffect(() => {
     if (!editableClient) {

@@ -23,7 +23,7 @@ const DocumentActions = () => {
 
   const { documentation, editMutation, addMutation } = useContext(DocumentationContext);
 
-  const editableDocument = documentation?.find((document) => document.id === id); // TODO: Revisit the optional chaining operator - poor way to handle loading.
+  const editableDocument = documentation?.find((document) => document.id === id);
 
   useEffect(() => {
     if (!editableDocument) {

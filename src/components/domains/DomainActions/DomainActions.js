@@ -29,7 +29,7 @@ const DomainActions = () => {
 
   const { clients } = useContext(ClientsContext);
 
-  const editableDomain = domains?.find((domain) => domain.id === id); // TODO: Revisit the optional chaining operator - poor way to handle loading.
+  const editableDomain = domains?.find((domain) => domain.id === id);
 
   useEffect(() => {
     if (!editableDomain) {

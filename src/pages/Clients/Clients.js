@@ -13,6 +13,7 @@ import { searchArrayOfObjects } from "../../utilities/utilities";
 import List from "../../components/List/List";
 
 import Client from "../../components/clients/Client/Client";
+import Search from "../../components/Search/Search";
 
 const title = "Tracker • Clients";
 
@@ -32,7 +33,7 @@ const Clients = () => {
       <h1>Clients</h1>
       <Link to={`${ROUTES.CLIENTS}/add`}>Add</Link>
 
-      <input name="search" type="text" value={search} onChange={(event) => setSearch(event.target.value)} />
+      <Search search={search} setSearch={setSearch} placeholder="Search clients..." />
 
       <List loading={loading} error={error} items={items} item={Client} />
     </div>

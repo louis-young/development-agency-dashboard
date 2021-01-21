@@ -1,0 +1,10 @@
+@import "../../stylesheets/abstracts/variables";
+@import "../../stylesheets/abstracts/extends";
+
+.list {
+  @extend %round;
+  background: $white;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+}

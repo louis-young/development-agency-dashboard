@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./List.scss";
+
 const List = ({ loading, error, items, item: Item }) => {
   if (loading) {
     return <p>Loading items...</p>;
@@ -15,7 +17,7 @@ const List = ({ loading, error, items, item: Item }) => {
 
   return (
     <>
-      <ul>
+      <ul className="list">
         {items.map((item) => (
           <Item key={item.id} item={item} />
         ))}

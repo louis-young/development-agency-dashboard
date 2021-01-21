@@ -1,0 +1,20 @@
+@import "../../stylesheets/abstracts/breakpoints";
+@import "../../stylesheets/base/typography";
+@import "../../stylesheets/abstracts/variables";
+
+.header {
+  background: $primary-color;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__logo {
+    padding: unset;
+    color: $white;
+    font-weight: $medium;
+  }
+  &__button {
+    padding: 1rem;
+    background: #000;
+  }
+}

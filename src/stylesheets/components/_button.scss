@@ -1,6 +1,6 @@
 .button {
   @extend %round;
-  padding: 1rem 2.5rem;
+  padding: 1rem 1.5rem;
   background: $primary-color;
   color: $white;
   font-weight: $medium;
@@ -9,6 +9,11 @@
   text-align: center;
   transition: background 0.2s ease-in-out;
   text-transform: uppercase;
+  font-size: 0.9rem;
+  height: 45px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   &:hover {
     background: $primary-color-dark;
   }
@@ -27,7 +32,6 @@
   }
   &--small {
     padding: 0.75rem;
-    font-size: 0.9rem;
   }
   &--light {
     background: $primary-color-light;
@@ -45,6 +49,12 @@
     background: $tertiary-color;
     &:hover {
       background: $tertiary-color-dark;
+    }
+  }
+  &--danger {
+    background: #cf6d6d;
+    &:hover {
+      background: #c04a4a;
     }
   }
 }

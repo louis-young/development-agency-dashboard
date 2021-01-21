@@ -22,7 +22,9 @@ const Documentation = () => {
   return (
     <>
       <h2>Documentation</h2>
-      <Link to={`${ROUTES.DOCUMENTATION}/add`}>Add</Link>
+      <Link className="button" to={`${ROUTES.DOCUMENTATION}/add`}>
+        Add
+      </Link>
 
       <List loading={loading} error={error} items={documentation} item={Document} />
     </>

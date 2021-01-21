@@ -100,7 +100,9 @@ const DomainActions = () => {
           <input name="renewal" type="date" value={fields.renewal} onChange={handleInputChange} required />
         </label>
 
-        <button type="submit">{action} Domain</button>
+        <button className="button" type="submit">
+          {action} Domain
+        </button>
       </form>
     </div>
   );

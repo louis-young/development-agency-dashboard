@@ -49,8 +49,12 @@ const Client = () => {
 
       <List items={clientDomains} item={Domain} />
 
-      <Link to={`${ROUTES.CLIENTS}/${id}/edit`}>Edit</Link>
-      <button onClick={deleteClient}>Delete</button>
+      <Link className="button" to={`${ROUTES.CLIENTS}/${id}/edit`}>
+        Edit
+      </Link>
+      <button className="button button--danger" onClick={deleteClient}>
+        Delete
+      </button>
     </section>
   );
 };

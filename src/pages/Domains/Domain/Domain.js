@@ -44,8 +44,12 @@ const Domain = () => {
       <p>Platform: {platform}</p>
       <p>Renewal: {renewal}</p>
 
-      <Link to={`${ROUTES.DOMAINS}/${id}/edit`}>Edit</Link>
-      <button onClick={deleteDomain}>Delete</button>
+      <Link className="button" to={`${ROUTES.DOMAINS}/${id}/edit`}>
+        Edit
+      </Link>
+      <button className="button button--danger" onClick={deleteDomain}>
+        Delete
+      </button>
     </section>
   );
 };

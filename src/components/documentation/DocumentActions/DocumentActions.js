@@ -80,7 +80,9 @@ const DocumentActions = () => {
           <textarea name="content" value={fields.content} onChange={handleInputChange} required />
         </label>
 
-        <button type="submit">{action} Document</button>
+        <button className="button" type="submit">
+          {action} Document
+        </button>
       </form>
     </div>
   );

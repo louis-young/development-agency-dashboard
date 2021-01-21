@@ -86,7 +86,9 @@ const ClientActions = () => {
           <input name="phone" type="tel" value={fields.phone} onChange={handleInputChange} required />
         </label>
 
-        <button type="submit">{action} Client</button>
+        <button className="button" type="submit">
+          {action} Client
+        </button>
       </form>
     </div>
   );

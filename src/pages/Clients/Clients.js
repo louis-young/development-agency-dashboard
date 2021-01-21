@@ -31,7 +31,10 @@ const Clients = () => {
   return (
     <div>
       <h2>Clients</h2>
-      <Link to={`${ROUTES.CLIENTS}/add`}>Add</Link>
+
+      <Link className="button" to={`${ROUTES.CLIENTS}/add`}>
+        Add
+      </Link>
 
       <Search search={search} setSearch={setSearch} placeholder="Search clients..." />
 

@@ -32,8 +32,12 @@ const Document = () => {
       <p>{description}</p>
       <p>{content}</p>
 
-      <Link to={`${ROUTES.DOCUMENTATION}/${id}/edit`}>Edit</Link>
-      <button onClick={deleteDocument}>Delete</button>
+      <Link className="button" to={`${ROUTES.DOCUMENTATION}/${id}/edit`}>
+        Edit
+      </Link>
+      <button className="button button--danger" onClick={deleteDocument}>
+        Delete
+      </button>
     </section>
   );
 };

@@ -28,12 +28,18 @@ const Tracker = () => {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <Header />
-        <Sidebar />
         <DocumentationProvider>
           <DomainsProvider>
             <ClientsProvider>
-              <Routes />
+              <main className="application">
+                <Header />
+                <section className="application__layout">
+                  <Sidebar />
+                  <section className="application__page">
+                    <Routes />
+                  </section>
+                </section>
+              </main>
             </ClientsProvider>
           </DomainsProvider>
         </DocumentationProvider>

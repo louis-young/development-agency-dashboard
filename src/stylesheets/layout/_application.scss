@@ -1,0 +1,13 @@
+.application {
+  background: #f5f6f8;
+
+  &__layout {
+    min-height: 100vh;
+    padding-top: 72.5px;
+    display: grid;
+    grid-template-columns: 290px 1fr;
+  }
+  &__page {
+    padding: 1rem;
+  }
+}

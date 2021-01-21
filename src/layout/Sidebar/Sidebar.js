@@ -1,37 +1,44 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import { Link } from "react-router-dom";
 
-import { AuthenticationContext } from "../../context/AuthenticationContext";
-
 import { ROUTES } from "../../constants/constants";
 
+import dashboard from "../../assets/sidebar/dashboard.svg";
+import clients from "../../assets/sidebar/clients.svg";
+import domains from "../../assets/sidebar/domains.svg";
+import documentation from "../../assets/sidebar/documentation.svg";
+
+import "./Sidebar.scss";
+
 const Sidebar = () => {
-  const { user } = useContext(AuthenticationContext);
-
-  const { displayName: name, photoURL: photo } = user;
-
   return (
-    <aside>
-      <h2>Sidebar</h2>
-
-      <img src={photo} alt={name} />
-      <h3>{name}</h3>
-
+    <aside className="sidebar">
       <nav>
         <ul>
           <li>
-            <Link to={ROUTES.DASHBOARD}>Dashboard</Link>
+            <Link className="sidebar__link" to={ROUTES.DASHBOARD}>
+              <img className="sidebar__icon" src={dashboard} alt="Dashboard" title="Dashboard" />
+              <p className="sidebar__label">Dashboard</p>
+            </Link>
           </li>
           <li>
-            <Link to={ROUTES.CLIENTS}>Clients</Link>
+            <Link className="sidebar__link" to={ROUTES.CLIENTS}>
+              <img className="sidebar__icon" src={clients} alt="Clients" title="Clients" />
+              <p className="sidebar__label">Clients</p>
+            </Link>
           </li>
           <li>
-            <Link to={ROUTES.DOMAINS}>Domains</Link>
+            <Link className="sidebar__link" to={ROUTES.DOMAINS}>
+              <img className="sidebar__icon" src={domains} alt="Domains" title="Domains" />
+              <p className="sidebar__label">Domains</p>
+            </Link>
           </li>
-
           <li>
-            <Link to={ROUTES.DOCUMENTATION}>Documentation</Link>
+            <Link className="sidebar__link" to={ROUTES.DOCUMENTATION}>
+              <img className="sidebar__icon" src={documentation} alt="Documentation" title="Documentation" />
+              <p className="sidebar__label">Documentation</p>
+            </Link>
           </li>
         </ul>
       </nav>

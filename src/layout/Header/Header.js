@@ -1,4 +1,7 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+
+import { ROUTES } from "../../constants/constants";
 
 import { AuthenticationContext } from "../../context/AuthenticationContext";
 
@@ -9,7 +12,9 @@ const Header = () => {
 
   return (
     <header className="header">
-      <h3 className="header__logo">Tracker</h3>
+      <Link to={ROUTES.DASHBOARD}>
+        <h4 className="header__logo">Tracker</h4>
+      </Link>
       <button className="header__button button button--light button--small" onClick={signOut}>
         Sign Out
       </button>

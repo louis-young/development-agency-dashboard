@@ -5,10 +5,11 @@ $body-font-family: "Montserrat", sans-serif;
 $heading-font-family: inherit;
 
 $light-text: #ffffff;
+$medium-text: #464646;
 $dark-text: #131313;
 
-$heading-line-height: 1.5;
-$body-line-height: 1.6;
+$heading-line-height: 1.2;
+$body-line-height: 1.5;
 
 $thin: 100;
 $extra-light: 200;
@@ -34,6 +35,7 @@ h5,
 h6 {
   line-height: $heading-line-height;
   font-family: $heading-font-family;
+  font-weight: $medium;
 }
 
 p,
@@ -50,7 +52,7 @@ address {
   padding: 1.5rem 0;
   font-size: 24px;
   @include tablet {
-    padding: 2.5rem 0;
+    padding: 2rem 0;
     font-size: 32px;
   }
   @include desktop {
@@ -62,7 +64,7 @@ address {
   padding: 1rem 0;
   font-size: 22px;
   @include tablet {
-    padding: 1.5rem 0;
+    padding: 1.25rem 0;
     font-size: 30px;
   }
   @include desktop {

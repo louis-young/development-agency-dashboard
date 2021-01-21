@@ -8,7 +8,9 @@ import useTitle from "../../hooks/useTitle";
 
 import { ROUTES } from "../../constants/constants";
 
-import DomainsList from "../../components/domains/DomainsList/DomainsList";
+import Domain from "../../components/domains/Domain/Domain";
+
+import List from "../../components/List/List";
 
 const title = "Tracker • Domains";
 
@@ -22,7 +24,7 @@ const Domains = () => {
       <h1>Domains</h1>
       <Link to={`${ROUTES.DOMAINS}/add`}>Add</Link>
 
-      <DomainsList loading={loading} error={error} domains={domains} />
+      <List loading={loading} error={error} items={domains} item={Domain} />
     </div>
   );
 };

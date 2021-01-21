@@ -8,7 +8,9 @@ import useTitle from "../../hooks/useTitle";
 
 import { ROUTES } from "../../constants/constants";
 
-import DocumentationList from "../../components/documentation/DocumentationList/DocumentationList";
+import Document from "../../components/documentation/Document/Document";
+
+import List from "../../components/List/List";
 
 const title = "Tracker • Documentation";
 
@@ -22,7 +24,7 @@ const Documentation = () => {
       <h1>Documentation</h1>
       <Link to={`${ROUTES.DOCUMENTATION}/add`}>Add</Link>
 
-      <DocumentationList loading={loading} error={error} documentation={documentation} />
+      <List loading={loading} error={error} items={documentation} item={Document} />
     </>
   );
 };

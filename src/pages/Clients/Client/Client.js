@@ -7,7 +7,9 @@ import { DomainsContext } from "../../../context/DomainsContext";
 
 import { ROUTES } from "../../../constants/constants";
 
-import DomainsList from "../../../components/domains/DomainsList/DomainsList";
+import Domain from "../../../components/domains/Domain/Domain";
+
+import List from "../../../components/List/List";
 
 const Client = () => {
   const { id } = useParams();
@@ -45,7 +47,7 @@ const Client = () => {
 
       <h2>Domains</h2>
 
-      <DomainsList domains={clientDomains} />
+      <List items={clientDomains} item={Domain} />
 
       <Link to={`${ROUTES.CLIENTS}/${id}/edit`}>Edit</Link>
       <button onClick={deleteClient}>Delete</button>

@@ -8,7 +8,7 @@ import useTitle from "../../hooks/useTitle";
 
 import { ROUTES } from "../../constants/constants";
 
-import DomainsList from "../../components/DomainsList/DomainsList";
+import DomainsList from "../../components/domains/DomainsList/DomainsList";
 
 const title = "Tracker • Domains";
 

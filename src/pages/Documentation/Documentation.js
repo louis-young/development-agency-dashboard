@@ -8,7 +8,7 @@ import useTitle from "../../hooks/useTitle";
 
 import { ROUTES } from "../../constants/constants";
 
-import DocumentationList from "../../components/DocumentationList/DocumentationList";
+import DocumentationList from "../../components/documentation/DocumentationList/DocumentationList";
 
 const title = "Tracker • Documentation";
 

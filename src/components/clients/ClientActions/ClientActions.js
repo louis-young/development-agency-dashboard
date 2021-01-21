@@ -2,9 +2,9 @@ import React, { useContext, useState, useEffect } from "react";
 
 import { useHistory, useParams } from "react-router-dom";
 
-import { ROUTES } from "../../constants/constants";
+import { ROUTES } from "../../../constants/constants";
 
-import { ClientsContext } from "../../context/ClientsContext";
+import { ClientsContext } from "../../../context/ClientsContext";
 
 const initialFields = {
   company: "",

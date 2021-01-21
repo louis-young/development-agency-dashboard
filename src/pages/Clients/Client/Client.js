@@ -7,7 +7,7 @@ import { DomainsContext } from "../../../context/DomainsContext";
 
 import { ROUTES } from "../../../constants/constants";
 
-import DomainsList from "../../../components/DomainsList/DomainsList";
+import DomainsList from "../../../components/domains/DomainsList/DomainsList";
 
 const Client = () => {
   const { id } = useParams();

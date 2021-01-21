@@ -8,7 +8,7 @@ import useTitle from "../../hooks/useTitle";
 
 import { ROUTES } from "../../constants/constants";
 
-import ClientsList from "../../components/ClientsList/ClientsList";
+import ClientsList from "../../components/clients/ClientsList/ClientsList";
 import { searchArrayOfObjects } from "../../utilities/utilities";
 
 const title = "Tracker • Clients";

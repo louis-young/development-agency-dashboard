@@ -22,4 +22,20 @@ const getTimeOfDay = () => {
   }
 };
 
-export { getTimeOfDay };
+const searchArrayOfObjects = (array, query) => {
+  if (!query) {
+    return;
+  }
+
+  const lowerCaseQuery = query.toLowerCase();
+
+  const results = array.filter((item) => {
+    const match = Object.values(item).some((value) => value.toLowerCase().includes(lowerCaseQuery));
+
+    return match;
+  });
+
+  return results;
+};
+
+export { getTimeOfDay, searchArrayOfObjects };

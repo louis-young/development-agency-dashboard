@@ -16,11 +16,13 @@ const ClientsList = ({ loading, error, clients }) => {
   }
 
   return (
-    <ul>
-      {clients.map((client) => (
-        <ClientItem key={client.id} id={client.id} client={client.company} />
-      ))}
-    </ul>
+    <>
+      <ul>
+        {clients.map((client) => (
+          <ClientItem key={client.id} id={client.id} client={client.company} />
+        ))}
+      </ul>
+    </>
   );
 };
 

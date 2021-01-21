@@ -63,7 +63,7 @@ const ClientActions = () => {
 
   return (
     <div>
-      <h1>{action} Client</h1>
+      <h2>{action} Client</h2>
 
       <form onSubmit={handleSubmit}>
         <label>

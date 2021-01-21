@@ -25,9 +25,9 @@ const Document = () => {
 
   return (
     <section>
-      <h1>Document</h1>
+      <h2>Document</h2>
 
-      <h2>{title}</h2>
+      <h3>{title}</h3>
 
       <p>{description}</p>
       <p>{content}</p>

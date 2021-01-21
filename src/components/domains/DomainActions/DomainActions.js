@@ -70,7 +70,7 @@ const DomainActions = () => {
 
   return (
     <div>
-      <h1>{action} Domain</h1>
+      <h2>{action} Domain</h2>
 
       <form onSubmit={handleSubmit}>
         <label>

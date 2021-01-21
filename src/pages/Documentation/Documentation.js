@@ -21,7 +21,7 @@ const Documentation = () => {
 
   return (
     <>
-      <h1>Documentation</h1>
+      <h2>Documentation</h2>
       <Link to={`${ROUTES.DOCUMENTATION}/add`}>Add</Link>
 
       <List loading={loading} error={error} items={documentation} item={Document} />

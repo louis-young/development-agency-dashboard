@@ -30,7 +30,7 @@ const Clients = () => {
 
   return (
     <div>
-      <h1>Clients</h1>
+      <h2>Clients</h2>
       <Link to={`${ROUTES.CLIENTS}/add`}>Add</Link>
 
       <Search search={search} setSearch={setSearch} placeholder="Search clients..." />

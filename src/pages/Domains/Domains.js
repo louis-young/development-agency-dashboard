@@ -21,7 +21,7 @@ const Domains = () => {
 
   return (
     <div>
-      <h1>Domains</h1>
+      <h2>Domains</h2>
       <Link to={`${ROUTES.DOMAINS}/add`}>Add</Link>
 
       <List loading={loading} error={error} items={domains} item={Domain} />

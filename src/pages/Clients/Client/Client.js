@@ -38,14 +38,14 @@ const Client = () => {
 
   return (
     <section>
-      <h1>Client</h1>
+      <h2>Client</h2>
 
       <p>Company: {company}</p>
       <p>Contact: {contact}</p>
       <p>Email: {email}</p>
       <p>Phone: {phone}</p>
 
-      <h2>Domains</h2>
+      <h3>Domains</h3>
 
       <List items={clientDomains} item={Domain} />
 

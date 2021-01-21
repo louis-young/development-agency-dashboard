@@ -62,7 +62,7 @@ const DocumentActions = () => {
 
   return (
     <div>
-      <h1>{action} Document</h1>
+      <h2>{action} Document</h2>
 
       <form onSubmit={handleSubmit}>
         <label>

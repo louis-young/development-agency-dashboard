@@ -34,9 +34,9 @@ const Domain = () => {
 
   return (
     <section>
-      <h1>Domain</h1>
+      <h2>Domain</h2>
 
-      <h2>{url}</h2>
+      <h3>{url}</h3>
 
       <p>
         Company: <Link to={`${ROUTES.CLIENTS}/${client.id}`}>{client.company}</Link>

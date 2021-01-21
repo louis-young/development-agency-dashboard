@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 
 import { Link, useParams } from "react-router-dom";
 
-import { ClientsContext } from "../../context/ClientsContext";
-import { DomainsContext } from "../../context/DomainsContext";
+import { ClientsContext } from "../../../context/ClientsContext";
+import { DomainsContext } from "../../../context/DomainsContext";
 
-import { ROUTES } from "../../constants/constants";
+import { ROUTES } from "../../../constants/constants";
 
-import DomainsList from "../../components/DomainsList/DomainsList";
+import DomainsList from "../../../components/DomainsList/DomainsList";
 
 const Client = () => {
   const { id } = useParams();

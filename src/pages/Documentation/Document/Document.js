@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 
 import { Link, useParams } from "react-router-dom";
 
-import { DocumentationContext } from "../../context/DocumentationContext";
+import { DocumentationContext } from "../../../context/DocumentationContext";
 
-import { ROUTES } from "../../constants/constants";
+import { ROUTES } from "../../../constants/constants";
 
 const Document = () => {
   const { id } = useParams();

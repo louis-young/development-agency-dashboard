@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 
 import { Link, useParams } from "react-router-dom";
 
-import { DomainsContext } from "../../context/DomainsContext";
-import { ClientsContext } from "../../context/ClientsContext";
+import { DomainsContext } from "../../../context/DomainsContext";
+import { ClientsContext } from "../../../context/ClientsContext";
 
-import { ROUTES } from "../../constants/constants";
+import { ROUTES } from "../../../constants/constants";
 
 const Domain = () => {
   const { id } = useParams();

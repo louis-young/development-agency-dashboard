@@ -7,15 +7,15 @@ import { ROUTES } from "../constants/constants";
 import Dashboard from "../pages/Dashboard/Dashboard";
 
 import ClientActions from "../components/ClientActions/ClientActions";
-import Client from "../pages/Client/Client";
+import Client from "../pages/Clients/Client/Client";
 import Clients from "../pages/Clients/Clients";
 
 import DomainActions from "../components/DomainActions/DomainActions";
-import Domain from "../pages/Domain/Domain";
+import Domain from "../pages/Domains/Domain/Domain";
 import Domains from "../pages/Domains/Domains";
 
 import DocumentActions from "../components/DocumentActions/DocumentActions";
-import Document from "../pages/Document/Document";
+import Document from "../pages/Documentation/Document/Document";
 import Documentation from "../pages/Documentation/Documentation";
 
 const ACTIONS = {

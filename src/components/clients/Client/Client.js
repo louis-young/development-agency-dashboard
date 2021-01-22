@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { ClientsContext } from "../../../context/ClientsContext";
+import { DomainsContext } from "../../../context/DomainsContext";
 
 import { ROUTES } from "../../../constants/constants";
 
@@ -11,7 +12,16 @@ const Client = ({ item }) => {
 
   const { deleteMutation } = useContext(ClientsContext);
 
+  const { domains } = useContext(DomainsContext);
+
+  const clientDomains = domains?.filter((domain) => domain.company === id);
+
   const deleteClient = () => {
+    if (clientDomains.length) {
+      alert(`Please delete domains associated with ${company}.`);
+      return;
+    }
+
     if (!window.confirm(`Are you sure you want to delete ${company}?`)) {
       return;
     }

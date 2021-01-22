@@ -32,17 +32,22 @@ const Client = () => {
     return <p>No client found.</p>;
   }
 
+  const clientDomains = domains?.filter((domain) => domain.company === id);
+
   const { company, contact, email, phone } = client;
 
   const deleteClient = () => {
+    if (clientDomains.length) {
+      alert(`Please delete domains associated with ${company}.`);
+      return;
+    }
+
     if (!window.confirm(`Are you sure you want to delete ${company}?`)) {
       return;
     }
 
     deleteMutation.mutate(id);
   };
-
-  const clientDomains = domains?.filter((domain) => domain.company === id);
 
   return (
     <section>

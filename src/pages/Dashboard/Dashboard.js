@@ -9,6 +9,8 @@ import { getTimeOfDay } from "../../utilities/utilities";
 import Breadcrumb from "../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 
+import "./Dashboard.scss";
+
 const title = "Tracker • Dashboard";
 
 const Dashboard = () => {
@@ -21,15 +23,18 @@ const Dashboard = () => {
   const greeting = getTimeOfDay();
 
   return (
-    <div>
-      <Breadcrumbs>
-        <Breadcrumb title="Dashboard" active />
-      </Breadcrumbs>
+    <article className="dashboard">
+      <div className="page__actions">
+        {" "}
+        <Breadcrumbs>
+          <Breadcrumb title="Dashboard" active />
+        </Breadcrumbs>
+      </div>
 
-      <p>
+      <p className="dashboard__greeting">
         Good {greeting}, {name}.
       </p>
-    </div>
+    </article>
   );
 };
 

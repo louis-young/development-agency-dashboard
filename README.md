@@ -1,6 +1,6 @@
 # Tracker
 
-React SPA for the front-end of a dashboard application to integrate with a REST API.
+React SPA front-end dashboard application integrated with Firebase backend and authentication.
 
 <!-- ![# Tracker](documentation/tracker.jpg) -->
 

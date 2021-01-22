@@ -26,7 +26,9 @@ const Domain = ({ item }) => {
         </Link>
       </td>
       <td className="table__cell">{platform}</td>
-      <td className="table__cell">{renewal}</td>
+      <td className="table__cell">
+        <time dateTime={renewal}>{renewal}</time>
+      </td>
     </tr>
   );
 };

@@ -20,7 +20,7 @@ const Table = ({ loading, error, headers, items, item: Item }) => {
       <thead>
         <tr className="table__row">
           {headers.map((header) => (
-            <th className="table__header" key={header}>
+            <th className={`table__header table__header--${header.toLowerCase()}`} key={header}>
               {header}
             </th>
           ))}

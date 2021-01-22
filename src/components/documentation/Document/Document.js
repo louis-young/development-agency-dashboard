@@ -9,12 +9,13 @@ const Document = ({ item }) => {
 
   return (
     <tr className="table__row">
+      <td className="table__cell">{title}</td>
+      <td className="table__cell">{description}</td>
       <td className="table__cell">
-        <Link className="table__link" to={`${ROUTES.DOCUMENTATION}/${id}`}>
-          {title}
+        <Link className="button" to={`${ROUTES.DOCUMENTATION}/${id}`}>
+          View
         </Link>
       </td>
-      <td className="table__cell">{description}</td>
     </tr>
   );
 };

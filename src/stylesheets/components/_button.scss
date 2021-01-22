@@ -60,4 +60,10 @@
       background: #c04a4a;
     }
   }
+  &--success {
+    background: #41b991;
+    &:hover {
+      background: #41b991;
+    }
+  }
 }

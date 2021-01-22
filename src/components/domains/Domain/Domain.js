@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import { Link } from "react-router-dom";
 
+import { DomainsContext } from "../../../context/DomainsContext";
 import { ClientsContext } from "../../../context/ClientsContext";
 
 import { ROUTES } from "../../../constants/constants";
@@ -9,16 +10,22 @@ import { ROUTES } from "../../../constants/constants";
 const Domain = ({ item }) => {
   const { id, company, domain, platform, renewal } = item;
 
+  const { deleteMutation } = useContext(DomainsContext);
+
   const { clients } = useContext(ClientsContext);
 
   const client = clients.find((client) => client.id === company);
 
+  const deleteDomain = () => {
+    deleteMutation.mutate(id);
+  };
+
   return (
     <tr className="table__row">
       <td className="table__cell">
-        <Link className="table__link" to={`${ROUTES.DOMAINS}/${id}`}>
+        <a className="table__link" href={`//${domain}`} target="_blank" rel="noopener noreferrer">
           {domain}
-        </Link>
+        </a>
       </td>
       <td className="table__cell">
         <Link className="table__link" to={`${ROUTES.CLIENTS}/${client.id}`}>
@@ -28,6 +35,14 @@ const Domain = ({ item }) => {
       <td className="table__cell">{platform}</td>
       <td className="table__cell">
         <time dateTime={renewal}>{renewal}</time>
+      </td>
+      <td className="table__cell table__cell--buttons">
+        <Link className="button" to={`${ROUTES.DOMAINS}/${id}/edit`}>
+          Edit
+        </Link>
+        <button className="button button--danger" onClick={deleteDomain}>
+          Delete
+        </button>
       </td>
     </tr>
   );

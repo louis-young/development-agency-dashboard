@@ -18,7 +18,7 @@ import Table from "../../components/Table/Table";
 
 const title = "Tracker • Clients";
 
-const headers = ["Company", "Contact", "Email", "Phone"];
+const headers = ["Company", "Contact", "Email", "Phone", "Actions"];
 
 const Clients = () => {
   const [search, setSearch] = useState("");

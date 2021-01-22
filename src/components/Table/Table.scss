@@ -22,6 +22,9 @@
       font-size: 1.15rem;
       padding: $desktop-padding;
     }
+    &--actions {
+      width: 255px;
+    }
   }
   &__row {
     &:nth-child(odd) {
@@ -40,6 +43,11 @@
     font-size: 0.95rem;
     @include tablet {
       font-size: 1rem;
+    }
+    &--buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 1rem;
     }
   }
   &__link {

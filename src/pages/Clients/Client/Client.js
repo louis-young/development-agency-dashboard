@@ -12,7 +12,7 @@ import Table from "../../../components/Table/Table";
 import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
 import Breadcrumb from "../../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
 
-const headers = ["Domain", "Client", "Provider", "Renewal"];
+const headers = ["Domain", "Client", "Provider", "Renewal", "Actions"];
 
 const Client = () => {
   const { id } = useParams();

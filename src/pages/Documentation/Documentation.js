@@ -18,7 +18,7 @@ import Table from "../../components/Table/Table";
 
 const title = "Tracker • Documentation";
 
-const headers = ["Title", "Description"];
+const headers = ["Title", "Description", "Actions"];
 
 const Documentation = () => {
   const [search, setSearch] = useState("");

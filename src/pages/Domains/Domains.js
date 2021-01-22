@@ -18,7 +18,7 @@ import Search from "../../components/Search/Search";
 
 const title = "Tracker • Domains";
 
-const headers = ["Domain", "Company", "Platform", "Renewal"];
+const headers = ["Domain", "Company", "Platform", "Renewal", "Actions"];
 
 const Domains = () => {
   const [search, setSearch] = useState("");

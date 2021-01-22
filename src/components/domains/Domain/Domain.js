@@ -17,6 +17,10 @@ const Domain = ({ item }) => {
   const client = clients.find((client) => client.id === company);
 
   const deleteDomain = () => {
+    if (!window.confirm(`Are you sure you want to delete ${domain}?`)) {
+      return;
+    }
+
     deleteMutation.mutate(id);
   };
 

@@ -30,6 +30,10 @@ const Domain = () => {
   const { domain: url, company, platform, renewal } = domain;
 
   const deleteDomain = () => {
+    if (!window.confirm(`Are you sure you want to delete ${url}?`)) {
+      return;
+    }
+
     deleteMutation.mutate(id);
   };
 

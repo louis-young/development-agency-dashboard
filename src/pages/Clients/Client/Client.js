@@ -34,6 +34,10 @@ const Client = () => {
   const { company, contact, email, phone } = client;
 
   const deleteClient = () => {
+    if (!window.confirm(`Are you sure you want to delete ${company}?`)) {
+      return;
+    }
+
     deleteMutation.mutate(id);
   };
 

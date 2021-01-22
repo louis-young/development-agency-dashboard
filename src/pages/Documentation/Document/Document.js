@@ -23,6 +23,10 @@ const Document = () => {
   const { title, description, content } = document;
 
   const deleteDocument = () => {
+    if (!window.confirm(`Are you sure you want to delete ${title}?`)) {
+      return;
+    }
+
     deleteMutation.mutate(id);
   };
 

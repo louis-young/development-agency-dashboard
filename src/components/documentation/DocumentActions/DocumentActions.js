@@ -2,6 +2,8 @@ import React, { useContext, useState, useEffect } from "react";
 
 import { useHistory, useParams } from "react-router-dom";
 
+import Markdown from "react-markdown";
+
 import { ROUTES } from "../../../constants/constants";
 
 import { DocumentationContext } from "../../../context/DocumentationContext";
@@ -114,6 +116,8 @@ const DocumentActions = () => {
           {action} Document
         </button>
       </form>
+
+      <Markdown className="markdown">{fields.content}</Markdown>
     </article>
   );
 };

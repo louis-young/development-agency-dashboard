@@ -15,7 +15,7 @@ const Sidebar = () => {
   return (
     <aside className="sidebar">
       <nav>
-        <ul>
+        <ul className="sidebar__list">
           <SidebarLink text="Dashboard" link={ROUTES.DASHBOARD} icon={dashboard} />
           <SidebarLink text="Clients" link={ROUTES.CLIENTS} icon={clients} />
           <SidebarLink text="Domains" link={ROUTES.DOMAINS} icon={domains} />

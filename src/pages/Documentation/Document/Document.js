@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 
 import { Link, useParams } from "react-router-dom";
 
+import Markdown from "react-markdown";
+
 import { DocumentationContext } from "../../../context/DocumentationContext";
 
 import { ROUTES } from "../../../constants/constants";
@@ -44,7 +46,8 @@ const Document = () => {
       <h3>{title}</h3>
 
       <p>{description}</p>
-      <p>{content}</p>
+
+      <Markdown className="markdown">{content}</Markdown>
 
       <Link className="button" to={`${ROUTES.DOCUMENTATION}/${id}/edit`}>
         Edit

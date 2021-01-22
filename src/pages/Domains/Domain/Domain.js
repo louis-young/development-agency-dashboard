@@ -37,11 +37,13 @@ const Domain = () => {
 
   return (
     <section>
-      <Breadcrumbs>
-        <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
-        <Breadcrumb title="Domains" link={ROUTES.DOMAINS} />
-        <Breadcrumb title={url} active />
-      </Breadcrumbs>
+      <div className="page__actions">
+        <Breadcrumbs>
+          <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
+          <Breadcrumb title="Domains" link={ROUTES.DOMAINS} />
+          <Breadcrumb title={url} active />
+        </Breadcrumbs>
+      </div>
 
       <h3>{url}</h3>
 

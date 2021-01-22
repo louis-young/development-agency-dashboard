@@ -39,11 +39,13 @@ const Client = () => {
 
   return (
     <section>
-      <Breadcrumbs>
-        <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
-        <Breadcrumb title="Clients" link={ROUTES.CLIENTS} />
-        <Breadcrumb title={company} active />
-      </Breadcrumbs>
+      <div className="page__actions">
+        <Breadcrumbs>
+          <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
+          <Breadcrumb title="Clients" link={ROUTES.CLIENTS} />
+          <Breadcrumb title={company} active />
+        </Breadcrumbs>
+      </div>
 
       <p>Company: {company}</p>
       <p>Contact: {contact}</p>

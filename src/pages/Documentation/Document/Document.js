@@ -28,11 +28,13 @@ const Document = () => {
 
   return (
     <section>
-      <Breadcrumbs>
-        <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
-        <Breadcrumb title="Documentation" link={ROUTES.DOCUMENTATION} />
-        <Breadcrumb title={title} active />
-      </Breadcrumbs>
+      <div className="page__actions">
+        <Breadcrumbs>
+          <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
+          <Breadcrumb title="Documentation" link={ROUTES.DOCUMENTATION} />
+          <Breadcrumb title={title} active />
+        </Breadcrumbs>
+      </div>
 
       <h3>{title}</h3>
 

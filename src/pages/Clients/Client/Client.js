@@ -66,7 +66,7 @@ const Client = () => {
       <Link className="button" to={`${ROUTES.CLIENTS}/${id}/edit`}>
         Edit
       </Link>
-      <button className="button button--danger" onClick={deleteClient}>
+      <button className="button button--small button--delete" onClick={deleteClient}>
         Delete
       </button>
     </section>

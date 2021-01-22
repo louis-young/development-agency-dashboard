@@ -15,6 +15,7 @@
   align-items: center;
   justify-content: center;
   height: $height;
+  min-width: 75px;
   &:hover {
     background: $primary-color-dark;
   }
@@ -54,16 +55,28 @@
       background: $tertiary-color-dark;
     }
   }
-  &--danger {
-    background: #cf6d6d;
+  &--delete {
+    background: #e76767;
     &:hover {
-      background: #c04a4a;
+      background: #e76767;
     }
   }
-  &--success {
-    background: #41b991;
+  // &--add {
+  //   background: #61bd4a;
+  //   &:hover {
+  //     background: #61bd4a;
+  //   }
+  // }
+  &--edit {
+    background: #a7a7a7;
     &:hover {
-      background: #41b991;
+      background: #a7a7a7;
     }
   }
+  // &--view {
+  //   background: #a7a7a7;
+  //   &:hover {
+  //     background: #a7a7a7;
+  //   }
+  // }
 }

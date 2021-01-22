@@ -49,7 +49,7 @@ const Document = () => {
       <Link className="button" to={`${ROUTES.DOCUMENTATION}/${id}/edit`}>
         Edit
       </Link>
-      <button className="button button--danger" onClick={deleteDocument}>
+      <button className="button button--small button--delete" onClick={deleteDocument}>
         Delete
       </button>
     </section>

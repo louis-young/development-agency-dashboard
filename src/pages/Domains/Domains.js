@@ -39,7 +39,7 @@ const Domains = () => {
           <Breadcrumb title="Domains" active />
         </Breadcrumbs>
 
-        <Link className="button" to={`${ROUTES.DOMAINS}/add`}>
+        <Link className="button button--add" to={`${ROUTES.DOMAINS}/add`}>
           Add Domain
         </Link>
       </div>

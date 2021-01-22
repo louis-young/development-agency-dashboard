@@ -61,7 +61,7 @@ const Domain = () => {
       <Link className="button" to={`${ROUTES.DOMAINS}/${id}/edit`}>
         Edit
       </Link>
-      <button className="button button--danger" onClick={deleteDomain}>
+      <button className="button button--small button--delete" onClick={deleteDomain}>
         Delete
       </button>
     </section>

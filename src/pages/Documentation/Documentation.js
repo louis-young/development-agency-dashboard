@@ -39,7 +39,7 @@ const Documentation = () => {
           <Breadcrumb title="Documentation" active />
         </Breadcrumbs>
 
-        <Link className="button" to={`${ROUTES.DOCUMENTATION}/add`}>
+        <Link className="button button--add" to={`${ROUTES.DOCUMENTATION}/add`}>
           Add Document
         </Link>
       </div>

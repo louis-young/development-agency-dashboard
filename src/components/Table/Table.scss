@@ -23,7 +23,7 @@
       padding: $desktop-padding;
     }
     &--actions {
-      width: 255px;
+      width: 300px;
     }
   }
   &__row {
@@ -47,9 +47,9 @@
       font-size: 1rem;
     }
     &--buttons {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
   }
   &__link {

@@ -39,7 +39,7 @@ const Clients = () => {
           <Breadcrumb title="Clients" active />
         </Breadcrumbs>
 
-        <Link className="button" to={`${ROUTES.CLIENTS}/add`}>
+        <Link className="button button--add" to={`${ROUTES.CLIENTS}/add`}>
           Add Client
         </Link>
       </div>

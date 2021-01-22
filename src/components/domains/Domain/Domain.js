@@ -41,10 +41,10 @@ const Domain = ({ item }) => {
         <time dateTime={renewal}>{renewal}</time>
       </td>
       <td className="table__cell table__cell--buttons">
-        <Link className="button" to={`${ROUTES.DOMAINS}/${id}/edit`}>
+        <Link className="button button--small button--edit" to={`${ROUTES.DOMAINS}/${id}/edit`}>
           Edit
         </Link>
-        <button className="button button--danger" onClick={deleteDomain}>
+        <button className="button button--small button--delete" onClick={deleteDomain}>
           Delete
         </button>
       </td>

@@ -1,6 +1,7 @@
-@import "../../stylesheets/abstracts/breakpoints";
-@import "../../stylesheets/base/typography";
 @import "../../stylesheets/abstracts/variables";
+@import "../../stylesheets/abstracts/breakpoints";
+@import "../../stylesheets/abstracts/extends";
+@import "../../stylesheets/base/typography";
 
 $height: 72.5px;
 
@@ -17,11 +18,8 @@ $height: 72.5px;
   z-index: 2;
   height: $height;
   &__logo {
-    padding: unset;
-    color: $white;
-    font-weight: $medium;
-    text-transform: uppercase;
-    letter-spacing: 1.25px;
+    @extend %hover;
+    width: 50px;
   }
   &__button {
     padding: 1rem;

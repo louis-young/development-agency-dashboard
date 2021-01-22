@@ -5,6 +5,8 @@ import { ROUTES } from "../../constants/constants";
 
 import { AuthenticationContext } from "../../context/AuthenticationContext";
 
+import logo from "../../assets/header/logo.png";
+
 import "./Header.scss";
 
 const Header = () => {
@@ -13,7 +15,7 @@ const Header = () => {
   return (
     <header className="header">
       <Link to={ROUTES.DASHBOARD}>
-        <h4 className="header__logo">Tracker</h4>
+        <img className="header__logo" src={logo} alt="Tracker" />
       </Link>
       <button className="header__button button button--light button--small" onClick={signOut}>
         Sign Out

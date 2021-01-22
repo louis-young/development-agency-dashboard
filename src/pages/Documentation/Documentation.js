@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import { Link } from "react-router-dom";
 
@@ -8,31 +8,46 @@ import useTitle from "../../hooks/useTitle";
 
 import { ROUTES } from "../../constants/constants";
 
+import { searchArrayOfObjects } from "../../utilities/utilities";
+
 import Document from "../../components/documentation/Document/Document";
-import List from "../../components/List/List";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import Breadcrumb from "../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
+import Search from "../../components/Search/Search";
+import Table from "../../components/Table/Table";
 
 const title = "Tracker • Documentation";
 
+const headers = ["Title", "Description"];
+
 const Documentation = () => {
+  const [search, setSearch] = useState("");
+
   useTitle(title);
 
   const { loading, error, documentation } = useContext(DocumentationContext);
 
+  const results = searchArrayOfObjects(documentation, search);
+
+  const items = results || documentation;
+
   return (
-    <>
-      <Breadcrumbs>
-        <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
-        <Breadcrumb title="Documentation" active />
-      </Breadcrumbs>
+    <article className="page">
+      <div className="page__actions">
+        <Breadcrumbs>
+          <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
+          <Breadcrumb title="Documentation" active />
+        </Breadcrumbs>
 
-      <Link className="button" to={`${ROUTES.DOCUMENTATION}/add`}>
-        Add Document
-      </Link>
+        <Link className="button" to={`${ROUTES.DOCUMENTATION}/add`}>
+          Add Document
+        </Link>
+      </div>
 
-      <List loading={loading} error={error} items={documentation} item={Document} />
-    </>
+      <Search search={search} setSearch={setSearch} placeholder="Search documentation..." />
+
+      <Table loading={loading} error={error} headers={headers} items={items} item={Document} />
+    </article>
   );
 };
 

@@ -5,14 +5,17 @@ import { Link } from "react-router-dom";
 import { ROUTES } from "../../../constants/constants";
 
 const Document = ({ item }) => {
-  const { id, title } = item;
+  const { id, title, description } = item;
 
   return (
-    <li className="list__item">
-      <Link className="list__link" to={`${ROUTES.DOCUMENTATION}/${id}`}>
-        {title}
-      </Link>
-    </li>
+    <tr className="table__row">
+      <td className="table__cell">
+        <Link className="table__link" to={`${ROUTES.DOCUMENTATION}/${id}`}>
+          {title}
+        </Link>
+      </td>
+      <td className="table__cell">{description}</td>
+    </tr>
   );
 };
 

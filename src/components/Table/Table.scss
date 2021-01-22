@@ -1,0 +1,47 @@
+@import "../../stylesheets/abstracts/breakpoints";
+@import "../../stylesheets/abstracts/variables";
+@import "../../stylesheets/abstracts/extends";
+@import "../../stylesheets/base/typography";
+
+.table {
+  $mobile-padding: 0.75rem;
+  $desktop-padding: 1.5rem;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  border: $border;
+  background: $white;
+  &__header {
+    color: $dark-text;
+    font-weight: $medium;
+    border: solid $dark-grey 1px;
+    font-size: 0.95rem;
+    padding: $mobile-padding;
+    @include tablet {
+      font-size: 1.15rem;
+      padding: $desktop-padding;
+    }
+  }
+  &__row {
+    &:nth-child(even) {
+      background-color: $primary-color-lighter;
+    }
+  }
+  &__row,
+  &__cell {
+    padding: $mobile-padding;
+    @include tablet {
+      padding: $desktop-padding;
+    }
+  }
+  &__cell {
+    border: solid $dark-grey 1px;
+    font-size: 0.95rem;
+    @include tablet {
+      font-size: 1rem;
+    }
+  }
+  &__link {
+    text-decoration: underline;
+  }
+}

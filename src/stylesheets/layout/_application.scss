@@ -1,6 +1,5 @@
 .application {
   background: #f7f7f7;
-
   &__layout {
     min-height: 100vh;
     padding-top: 72.5px;
@@ -8,6 +7,6 @@
     grid-template-columns: 295px 1fr;
   }
   &__page {
-    padding: 2rem;
+    padding: 1.5rem 2rem;
   }
 }

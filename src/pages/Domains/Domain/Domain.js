@@ -33,7 +33,7 @@ const Domain = () => {
     deleteMutation.mutate(id);
   };
 
-  const client = clients.find((client) => client.id === company); // TODO: Refactor.
+  const client = clients.find((client) => client.id === company);
 
   return (
     <section>

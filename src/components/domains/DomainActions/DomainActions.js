@@ -9,6 +9,7 @@ import { ClientsContext } from "../../../context/ClientsContext";
 
 import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
 import Breadcrumb from "../../Breadcrumbs/Breadcrumb/Breadcrumb";
+import Loading from "../../Loading/Loading";
 
 const initialFields = {
   company: "",
@@ -62,6 +63,10 @@ const DomainActions = () => {
       [name]: value,
     }));
   };
+
+  if (!domains) {
+    return <Loading />;
+  }
 
   if (editing && !editableDomain) {
     return <p>No domain found.</p>;

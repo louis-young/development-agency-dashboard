@@ -1,10 +1,12 @@
 import React from "react";
 
+import Loading from "../Loading/Loading";
+
 import "./Table.scss";
 
 const Table = ({ loading, error, headers, items, item: Item }) => {
   if (loading) {
-    return <p>Loading items...</p>;
+    return <Loading />;
   }
 
   if (error) {

@@ -11,6 +11,7 @@ import Domain from "../../../components/domains/Domain/Domain";
 import Table from "../../../components/Table/Table";
 import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
 import Breadcrumb from "../../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
+import Loading from "../../../components/Loading/Loading";
 
 const headers = ["Domain", "Client", "Provider", "Renewal", "Actions"];
 
@@ -22,7 +23,7 @@ const Client = () => {
   const { domains } = useContext(DomainsContext);
 
   if (!clients) {
-    return <p>Loading client...</p>;
+    return <Loading />;
   }
 
   const client = clients.find((client) => client.id === id);

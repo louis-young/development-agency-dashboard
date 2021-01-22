@@ -11,6 +11,7 @@ import Header from "./layout/Header/Header";
 import Sidebar from "./layout/Sidebar/Sidebar";
 import Login from "./pages/Login/Login";
 import Routes from "./routes/Routes";
+import Loading from "./components/Loading/Loading";
 
 const queryClient = new QueryClient();
 
@@ -18,7 +19,7 @@ const Tracker = () => {
   const { user, authenticating } = useContext(AuthenticationContext);
 
   if (authenticating) {
-    return <p>Authenticating...</p>;
+    return <Loading />;
   }
 
   if (!user) {

@@ -8,6 +8,7 @@ import { ROUTES } from "../../../constants/constants";
 
 import Breadcrumb from "../../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
 import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
+import Loading from "../../../components/Loading/Loading";
 
 const Document = () => {
   const { id } = useParams();
@@ -15,7 +16,7 @@ const Document = () => {
   const { documentation, deleteMutation } = useContext(DocumentationContext);
 
   if (!documentation) {
-    return <p>Loading document...</p>;
+    return <Loading />;
   }
 
   const document = documentation.find((document) => document.id === id);

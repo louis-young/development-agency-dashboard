@@ -9,6 +9,7 @@ import { ROUTES } from "../../../constants/constants";
 
 import Breadcrumb from "../../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
 import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
+import Loading from "../../../components/Loading/Loading";
 
 const Domain = () => {
   const { id } = useParams();
@@ -18,7 +19,7 @@ const Domain = () => {
   const { clients } = useContext(ClientsContext);
 
   if (!domains) {
-    return <p>Loading domain...</p>;
+    return <Loading />;
   }
 
   const domain = domains.find((domain) => domain.id === id);

@@ -17,13 +17,14 @@
     border: solid $dark-grey 1px;
     font-size: 0.95rem;
     padding: $mobile-padding;
+    background: $white;
     @include tablet {
       font-size: 1.15rem;
       padding: $desktop-padding;
     }
   }
   &__row {
-    &:nth-child(even) {
+    &:nth-child(odd) {
       background-color: $primary-color-lighter;
     }
   }

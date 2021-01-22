@@ -8,8 +8,10 @@ const Client = ({ item }) => {
   const { id, company } = item;
 
   return (
-    <li>
-      <Link to={`${ROUTES.CLIENTS}/${id}`}>{company}</Link>
+    <li className="list__item">
+      <Link className="list__link" to={`${ROUTES.CLIENTS}/${id}`}>
+        {company}
+      </Link>
     </li>
   );
 };

@@ -7,4 +7,12 @@
   padding: 2rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: 1rem;
+  &__link {
+    display: block;
+    padding: 0.25rem 0;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

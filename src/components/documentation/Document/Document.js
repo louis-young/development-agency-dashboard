@@ -8,8 +8,10 @@ const Document = ({ item }) => {
   const { id, title } = item;
 
   return (
-    <li>
-      <Link to={`${ROUTES.DOCUMENTATION}/${id}`}>{title}</Link>
+    <li className="list__item">
+      <Link className="list__link" to={`${ROUTES.DOCUMENTATION}/${id}`}>
+        {title}
+      </Link>
     </li>
   );
 };

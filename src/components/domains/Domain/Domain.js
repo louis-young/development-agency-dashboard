@@ -8,8 +8,10 @@ const Domain = ({ item }) => {
   const { id, domain } = item;
 
   return (
-    <li>
-      <Link to={`${ROUTES.DOMAINS}/${id}`}>{domain}</Link>
+    <li className="list__item">
+      <Link className="list__link" to={`${ROUTES.DOMAINS}/${id}`}>
+        {domain}
+      </Link>
     </li>
   );
 };

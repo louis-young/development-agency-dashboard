@@ -7,6 +7,9 @@ import { ROUTES } from "../../../constants/constants";
 import { DomainsContext } from "../../../context/DomainsContext";
 import { ClientsContext } from "../../../context/ClientsContext";
 
+import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
+import Breadcrumb from "../../Breadcrumbs/Breadcrumb/Breadcrumb";
+
 const initialFields = {
   company: "",
   domain: "",
@@ -70,7 +73,12 @@ const DomainActions = () => {
 
   return (
     <div>
-      <h2>{action} Domain</h2>
+      <Breadcrumbs>
+        <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
+        <Breadcrumb title="Domains" link={ROUTES.DOMAINS} />
+        {id && <Breadcrumb title={editableDomain.domain} link={`${ROUTES.DOMAINS}/${id}`} />}
+        <Breadcrumb title={action} active />
+      </Breadcrumbs>
 
       <form onSubmit={handleSubmit}>
         <label>

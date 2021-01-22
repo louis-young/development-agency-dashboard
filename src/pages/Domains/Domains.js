@@ -11,6 +11,8 @@ import { ROUTES } from "../../constants/constants";
 import Domain from "../../components/domains/Domain/Domain";
 
 import List from "../../components/List/List";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
+import Breadcrumb from "../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
 
 const title = "Tracker • Domains";
 
@@ -21,7 +23,11 @@ const Domains = () => {
 
   return (
     <div>
-      <h2>Domains</h2>
+      <Breadcrumbs>
+        <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
+        <Breadcrumb title="Domains" link={ROUTES.DOMAINS} active />
+      </Breadcrumbs>
+
       <Link className="button" to={`${ROUTES.DOMAINS}/add`}>
         Add
       </Link>

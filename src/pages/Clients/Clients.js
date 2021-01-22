@@ -14,6 +14,8 @@ import List from "../../components/List/List";
 
 import Client from "../../components/clients/Client/Client";
 import Search from "../../components/Search/Search";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
+import Breadcrumb from "../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
 
 const title = "Tracker • Clients";
 
@@ -30,7 +32,10 @@ const Clients = () => {
 
   return (
     <div>
-      <h2>Clients</h2>
+      <Breadcrumbs>
+        <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
+        <Breadcrumb title="Clients" link={ROUTES.CLIENTS} active />
+      </Breadcrumbs>
 
       <Link className="button" to={`${ROUTES.CLIENTS}/add`}>
         Add

@@ -1,0 +1,18 @@
+@import "../../../stylesheets/abstracts/breakpoints";
+@import "../../../stylesheets/abstracts/variables";
+@import "../../../stylesheets/base/typography";
+
+.breadcrumb {
+  display: inline-block;
+  color: $medium-text;
+
+  &__link {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &--active {
+    color: $dark-text;
+    font-weight: $medium;
+  }
+}

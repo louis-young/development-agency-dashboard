@@ -6,6 +6,11 @@ import useTitle from "../../hooks/useTitle";
 
 import { getTimeOfDay } from "../../utilities/utilities";
 
+import { ROUTES } from "../../constants/constants";
+
+import Breadcrumb from "../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
+
 const title = "Tracker • Dashboard";
 
 const Dashboard = () => {
@@ -19,7 +24,9 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h2>Dashboard</h2>
+      <Breadcrumbs>
+        <Breadcrumb title="Dashboard" active />
+      </Breadcrumbs>
 
       <p>
         Good {greeting}, {name}.

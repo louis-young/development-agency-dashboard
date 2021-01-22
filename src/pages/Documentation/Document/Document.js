@@ -6,6 +6,9 @@ import { DocumentationContext } from "../../../context/DocumentationContext";
 
 import { ROUTES } from "../../../constants/constants";
 
+import Breadcrumb from "../../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
+import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
+
 const Document = () => {
   const { id } = useParams();
 
@@ -25,7 +28,11 @@ const Document = () => {
 
   return (
     <section>
-      <h2>Document</h2>
+      <Breadcrumbs>
+        <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
+        <Breadcrumb title="Documentation" link={ROUTES.DOCUMENTATION} />
+        <Breadcrumb title={title} active />
+      </Breadcrumbs>
 
       <h3>{title}</h3>
 

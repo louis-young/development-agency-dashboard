@@ -6,6 +6,9 @@ import { ROUTES } from "../../../constants/constants";
 
 import { ClientsContext } from "../../../context/ClientsContext";
 
+import Breadcrumb from "../../Breadcrumbs/Breadcrumb/Breadcrumb";
+import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
+
 const initialFields = {
   company: "",
   contact: "",
@@ -63,7 +66,12 @@ const ClientActions = () => {
 
   return (
     <div>
-      <h2>{action} Client</h2>
+      <Breadcrumbs>
+        <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
+        <Breadcrumb title="Clients" link={ROUTES.CLIENTS} />
+        {id && <Breadcrumb title={editableClient.company} link={`${ROUTES.CLIENTS}/${id}`} />}
+        <Breadcrumb title={action} active />
+      </Breadcrumbs>
 
       <form onSubmit={handleSubmit}>
         <label>

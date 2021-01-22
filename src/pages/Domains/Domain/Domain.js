@@ -7,6 +7,9 @@ import { ClientsContext } from "../../../context/ClientsContext";
 
 import { ROUTES } from "../../../constants/constants";
 
+import Breadcrumb from "../../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
+import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
+
 const Domain = () => {
   const { id } = useParams();
 
@@ -34,7 +37,11 @@ const Domain = () => {
 
   return (
     <section>
-      <h2>Domain</h2>
+      <Breadcrumbs>
+        <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
+        <Breadcrumb title="Domains" link={ROUTES.DOMAINS} />
+        <Breadcrumb title={url} active />
+      </Breadcrumbs>
 
       <h3>{url}</h3>
 

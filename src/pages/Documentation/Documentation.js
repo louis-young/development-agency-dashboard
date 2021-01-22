@@ -9,8 +9,9 @@ import useTitle from "../../hooks/useTitle";
 import { ROUTES } from "../../constants/constants";
 
 import Document from "../../components/documentation/Document/Document";
-
 import List from "../../components/List/List";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
+import Breadcrumb from "../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
 
 const title = "Tracker • Documentation";
 
@@ -21,7 +22,11 @@ const Documentation = () => {
 
   return (
     <>
-      <h2>Documentation</h2>
+      <Breadcrumbs>
+        <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
+        <Breadcrumb title="Documentation" link={ROUTES.DOCUMENTATION} active />
+      </Breadcrumbs>
+
       <Link className="button" to={`${ROUTES.DOCUMENTATION}/add`}>
         Add
       </Link>

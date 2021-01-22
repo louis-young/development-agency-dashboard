@@ -24,7 +24,7 @@ const Documentation = () => {
     <>
       <Breadcrumbs>
         <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
-        <Breadcrumb title="Documentation" link={ROUTES.DOCUMENTATION} active />
+        <Breadcrumb title="Documentation" active />
       </Breadcrumbs>
 
       <Link className="button" to={`${ROUTES.DOCUMENTATION}/add`}>

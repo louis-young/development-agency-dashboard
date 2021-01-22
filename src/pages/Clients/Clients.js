@@ -34,7 +34,7 @@ const Clients = () => {
     <div>
       <Breadcrumbs>
         <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
-        <Breadcrumb title="Clients" link={ROUTES.CLIENTS} active />
+        <Breadcrumb title="Clients" active />
       </Breadcrumbs>
 
       <Link className="button" to={`${ROUTES.CLIENTS}/add`}>

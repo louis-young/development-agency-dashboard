@@ -29,7 +29,7 @@ const Domains = () => {
       </Breadcrumbs>
 
       <Link className="button" to={`${ROUTES.DOMAINS}/add`}>
-        Add
+        Add Domain
       </Link>
 
       <List loading={loading} error={error} items={domains} item={Domain} />

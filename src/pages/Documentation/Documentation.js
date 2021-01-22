@@ -28,7 +28,7 @@ const Documentation = () => {
       </Breadcrumbs>
 
       <Link className="button" to={`${ROUTES.DOCUMENTATION}/add`}>
-        Add
+        Add Document
       </Link>
 
       <List loading={loading} error={error} items={documentation} item={Document} />

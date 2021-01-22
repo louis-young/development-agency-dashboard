@@ -38,7 +38,7 @@ const Clients = () => {
       </Breadcrumbs>
 
       <Link className="button" to={`${ROUTES.CLIENTS}/add`}>
-        Add
+        Add Client
       </Link>
 
       <Search search={search} setSearch={setSearch} placeholder="Search clients..." />

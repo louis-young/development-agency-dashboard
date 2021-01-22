@@ -12,8 +12,12 @@
     align-items: center;
     justify-content: flex-start;
     transition: 0.15s background;
+    margin-bottom: 0.2rem;
     &:hover {
       background: #f5f5f5;
+    }
+    &--active {
+      background: #f0f0f0;
     }
   }
   &__label {

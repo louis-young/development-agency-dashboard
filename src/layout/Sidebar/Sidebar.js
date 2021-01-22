@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import { ROUTES } from "../../constants/constants";
 
@@ -12,12 +12,18 @@ import documentation from "../../assets/sidebar/documentation.svg";
 import "./Sidebar.scss";
 
 const Sidebar = () => {
+  const { location } = useHistory();
+
+  useEffect(() => {
+    console.log(location);
+  }, [location]);
+
   return (
     <aside className="sidebar">
       <nav>
         <ul>
           <li>
-            <Link className="sidebar__link" to={ROUTES.DASHBOARD}>
+            <Link className="sidebar__link sidebar__link--active" to={ROUTES.DASHBOARD}>
               <img className="sidebar__icon" src={dashboard} alt="Dashboard" title="Dashboard" />
               <p className="sidebar__label">Dashboard</p>
             </Link>

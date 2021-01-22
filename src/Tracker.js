@@ -12,6 +12,7 @@ import Sidebar from "./layout/Sidebar/Sidebar";
 import Login from "./pages/Login/Login";
 import Routes from "./routes/Routes";
 import Loading from "./components/Loading/Loading";
+import { ProjectsProvider } from "./context/ProjectsContext";
 
 const queryClient = new QueryClient();
 
@@ -32,15 +33,17 @@ const Tracker = () => {
         <DocumentationProvider>
           <DomainsProvider>
             <ClientsProvider>
-              <main className="application">
-                <Header />
-                <section className="application__layout">
-                  <Sidebar />
-                  <section className="application__page">
-                    <Routes />
+              <ProjectsProvider>
+                <main className="application">
+                  <Header />
+                  <section className="application__layout">
+                    <Sidebar />
+                    <section className="application__page">
+                      <Routes />
+                    </section>
                   </section>
-                </section>
-              </main>
+                </main>
+              </ProjectsProvider>
             </ClientsProvider>
           </DomainsProvider>
         </DocumentationProvider>

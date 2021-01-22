@@ -38,4 +38,16 @@ const searchArrayOfObjects = (array, query) => {
   return results;
 };
 
-export { getTimeOfDay, searchArrayOfObjects };
+const getActiveLink = (location) => {
+  const pathname = location.pathname;
+
+  const delimiter = "/";
+
+  const start = 1;
+
+  const activeLink = pathname.split(delimiter).slice(start).shift();
+
+  return activeLink;
+};
+
+export { getTimeOfDay, searchArrayOfObjects, getActiveLink };

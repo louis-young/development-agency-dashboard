@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-
-import { Link, useHistory } from "react-router-dom";
+import React from "react";
 
 import { ROUTES } from "../../constants/constants";
 
@@ -9,43 +7,19 @@ import clients from "../../assets/sidebar/clients.svg";
 import domains from "../../assets/sidebar/domains.svg";
 import documentation from "../../assets/sidebar/documentation.svg";
 
+import SidebarLink from "./SidebarLink/SidebarLink";
+
 import "./Sidebar.scss";
 
 const Sidebar = () => {
-  const { location } = useHistory();
-
-  useEffect(() => {
-    console.log(location);
-  }, [location]);
-
   return (
     <aside className="sidebar">
       <nav>
         <ul>
-          <li>
-            <Link className="sidebar__link sidebar__link--active" to={ROUTES.DASHBOARD}>
-              <img className="sidebar__icon" src={dashboard} alt="Dashboard" title="Dashboard" />
-              <p className="sidebar__label">Dashboard</p>
-            </Link>
-          </li>
-          <li>
-            <Link className="sidebar__link" to={ROUTES.CLIENTS}>
-              <img className="sidebar__icon" src={clients} alt="Clients" title="Clients" />
-              <p className="sidebar__label">Clients</p>
-            </Link>
-          </li>
-          <li>
-            <Link className="sidebar__link" to={ROUTES.DOMAINS}>
-              <img className="sidebar__icon" src={domains} alt="Domains" title="Domains" />
-              <p className="sidebar__label">Domains</p>
-            </Link>
-          </li>
-          <li>
-            <Link className="sidebar__link" to={ROUTES.DOCUMENTATION}>
-              <img className="sidebar__icon" src={documentation} alt="Documentation" title="Documentation" />
-              <p className="sidebar__label">Documentation</p>
-            </Link>
-          </li>
+          <SidebarLink text="Dashboard" link={ROUTES.DASHBOARD} icon={dashboard} />
+          <SidebarLink text="Clients" link={ROUTES.CLIENTS} icon={clients} />
+          <SidebarLink text="Domains" link={ROUTES.DOMAINS} icon={domains} />
+          <SidebarLink text="Documentation" link={ROUTES.DOCUMENTATION} icon={documentation} />
         </ul>
       </nav>
     </aside>

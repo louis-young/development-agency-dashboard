@@ -8,9 +8,11 @@ import { DomainsContext } from "../../../context/DomainsContext";
 import { ROUTES } from "../../../constants/constants";
 
 import Domain from "../../../components/domains/Domain/Domain";
-import List from "../../../components/List/List";
+import Table from "../../../components/Table/Table";
 import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
 import Breadcrumb from "../../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
+
+const headers = ["Domain", "Client", "Provider", "Renewal"];
 
 const Client = () => {
   const { id } = useParams();
@@ -54,7 +56,7 @@ const Client = () => {
 
       <h3>Domains</h3>
 
-      <List items={clientDomains} item={Domain} />
+      <Table items={clientDomains} headers={headers} item={Domain} />
 
       <Link className="button" to={`${ROUTES.CLIENTS}/${id}/edit`}>
         Edit

@@ -10,15 +10,15 @@ const getTimeOfDay = () => {
   const evening = hours >= 18;
 
   if (morning) {
-    return "Morning";
+    return "morning";
   }
 
   if (afternoon) {
-    return "Afternoon";
+    return "afternoon";
   }
 
   if (evening) {
-    return "Evening";
+    return "evening";
   }
 };
 

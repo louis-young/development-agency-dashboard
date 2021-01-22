@@ -1,0 +1,17 @@
+.form {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 500px;
+  &__label,
+  &__input {
+    width: 100%;
+  }
+  &__label {
+    font-weight: $medium;
+    margin-bottom: 1rem;
+  }
+  &__input {
+    margin-top: 0.25rem;
+    font-weight: $normal;
+  }
+}

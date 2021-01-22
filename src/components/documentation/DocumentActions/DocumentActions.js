@@ -64,35 +64,57 @@ const DocumentActions = () => {
   const action = editing ? "Edit" : "Add";
 
   return (
-    <div>
-      <Breadcrumbs>
-        <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
-        <Breadcrumb title="Documentation" link={ROUTES.DOCUMENTATION} />
-        {id && <Breadcrumb title={editableDocument.title} link={`${ROUTES.DOCUMENTATION}/${id}`} />}
-        <Breadcrumb title={action} active />
-      </Breadcrumbs>
+    <article>
+      <div className="page__actions">
+        <Breadcrumbs>
+          <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
+          <Breadcrumb title="Documentation" link={ROUTES.DOCUMENTATION} />
+          {id && <Breadcrumb title={editableDocument.title} link={`${ROUTES.DOCUMENTATION}/${id}`} />}
+          <Breadcrumb title={action} active />
+        </Breadcrumbs>
+      </div>
 
-      <form onSubmit={handleSubmit}>
-        <label>
+      <form onSubmit={handleSubmit} className="form">
+        <label className="form__label">
           Title
-          <input name="title" type="text" value={fields.title} onChange={handleInputChange} required />
+          <input
+            className="form__input"
+            name="title"
+            type="text"
+            value={fields.title}
+            onChange={handleInputChange}
+            required
+          />
         </label>
 
-        <label>
+        <label className="form__label">
           Description
-          <input name="description" type="text" value={fields.description} onChange={handleInputChange} required />
+          <input
+            className="form__input"
+            name="description"
+            type="text"
+            value={fields.description}
+            onChange={handleInputChange}
+            required
+          />
         </label>
 
-        <label>
+        <label className="form__label">
           Content
-          <textarea name="content" value={fields.content} onChange={handleInputChange} required />
+          <textarea
+            className=" form__input form__input--textarea"
+            name="content"
+            value={fields.content}
+            onChange={handleInputChange}
+            required
+          />
         </label>
 
-        <button className="button" type="submit">
+        <button className="form__submit button" type="submit">
           {action} Document
         </button>
       </form>
-    </div>
+    </article>
   );
 };
 

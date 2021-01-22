@@ -65,40 +65,70 @@ const ClientActions = () => {
   const action = editing ? "Edit" : "Add";
 
   return (
-    <div>
-      <Breadcrumbs>
-        <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
-        <Breadcrumb title="Clients" link={ROUTES.CLIENTS} />
-        {id && <Breadcrumb title={editableClient.company} link={`${ROUTES.CLIENTS}/${id}`} />}
-        <Breadcrumb title={action} active />
-      </Breadcrumbs>
+    <article>
+      <div className="page__actions">
+        <Breadcrumbs>
+          <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
+          <Breadcrumb title="Clients" link={ROUTES.CLIENTS} />
+          {id && <Breadcrumb title={editableClient.company} link={`${ROUTES.CLIENTS}/${id}`} />}
+          <Breadcrumb title={action} active />
+        </Breadcrumbs>
+      </div>
 
-      <form onSubmit={handleSubmit}>
-        <label>
+      <form onSubmit={handleSubmit} className="form">
+        <label className="form__label">
           Company
-          <input name="company" type="text" value={fields.company} onChange={handleInputChange} required />
+          <input
+            className="form__input"
+            name="company"
+            type="text"
+            value={fields.company}
+            onChange={handleInputChange}
+            required
+          />
         </label>
 
-        <label>
+        <label className="form__label">
           Contact
-          <input name="contact" type="text" value={fields.contact} onChange={handleInputChange} required />
+          <input
+            className="form__input"
+            name="contact"
+            type="text"
+            value={fields.contact}
+            onChange={handleInputChange}
+            required
+          />
         </label>
 
-        <label>
+        <label className="form__label">
           Email
-          <input name="email" type="email" value={fields.email} onChange={handleInputChange} required />
+          <input
+            className="form__input"
+            name="email"
+            type="email"
+            value={fields.email}
+            onChange={handleInputChange}
+            required
+          />
         </label>
 
-        <label>
+        <label className="form__label">
           Phone
-          <input name="phone" type="tel" value={fields.phone} onChange={handleInputChange} required />
+          <input
+            className="form__input"
+            name="phone"
+            type="tel"
+            value={fields.phone}
+            onChange={handleInputChange}
+            required
+          />
         </label>
 
-        <button className="button" type="submit">
+        <button className="form__submit button" type="submit">
           {action} Client
         </button>
       </form>
-    </div>
+    </article>
   );
 };
 

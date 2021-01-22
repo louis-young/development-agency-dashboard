@@ -72,18 +72,26 @@ const DomainActions = () => {
   const defaultValue = editableDomain?.company || "";
 
   return (
-    <div>
-      <Breadcrumbs>
-        <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
-        <Breadcrumb title="Domains" link={ROUTES.DOMAINS} />
-        {id && <Breadcrumb title={editableDomain.domain} link={`${ROUTES.DOMAINS}/${id}`} />}
-        <Breadcrumb title={action} active />
-      </Breadcrumbs>
+    <article>
+      <div className="page__actions">
+        <Breadcrumbs>
+          <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
+          <Breadcrumb title="Domains" link={ROUTES.DOMAINS} />
+          {id && <Breadcrumb title={editableDomain.domain} link={`${ROUTES.DOMAINS}/${id}`} />}
+          <Breadcrumb title={action} active />
+        </Breadcrumbs>
+      </div>
 
-      <form onSubmit={handleSubmit}>
-        <label>
+      <form onSubmit={handleSubmit} className="form">
+        <label className="form__label">
           Company
-          <select name="company" defaultValue={defaultValue} onChange={handleInputChange} required>
+          <select
+            name="company"
+            className="form__input form__input--select"
+            defaultValue={defaultValue}
+            onChange={handleInputChange}
+            required
+          >
             {!editableDomain && <option value="">Select a company...</option>}
             {clients?.map((client) => (
               <option key={client.id} value={client.id}>
@@ -93,26 +101,47 @@ const DomainActions = () => {
           </select>
         </label>
 
-        <label>
+        <label className="form__label">
           Domain
-          <input name="domain" type="text" value={fields.domain} onChange={handleInputChange} required />
+          <input
+            className="form__input"
+            name="domain"
+            type="text"
+            value={fields.domain}
+            onChange={handleInputChange}
+            required
+          />
         </label>
 
-        <label>
+        <label className="form__label">
           Platform
-          <input name="platform" type="text" value={fields.platform} onChange={handleInputChange} required />
+          <input
+            className="form__input"
+            name="platform"
+            type="text"
+            value={fields.platform}
+            onChange={handleInputChange}
+            required
+          />
         </label>
 
-        <label>
+        <label className="form__label">
           Renewal
-          <input name="renewal" type="date" value={fields.renewal} onChange={handleInputChange} required />
+          <input
+            className="form__input"
+            name="renewal"
+            type="date"
+            value={fields.renewal}
+            onChange={handleInputChange}
+            required
+          />
         </label>
 
-        <button className="button" type="submit">
+        <button className="form__submit button" type="submit">
           {action} Domain
         </button>
       </form>
-    </div>
+    </article>
   );
 };
 

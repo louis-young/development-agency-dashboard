@@ -50,7 +50,7 @@ const Project = () => {
       <div className="page__actions">
         <Breadcrumbs>
           <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
-          <Breadcrumb title="Projects" link={ROUTES.CLIENTS} />
+          <Breadcrumb title="Projects" link={ROUTES.PROJECTS} />
           <Breadcrumb title={company} active />
         </Breadcrumbs>
       </div>

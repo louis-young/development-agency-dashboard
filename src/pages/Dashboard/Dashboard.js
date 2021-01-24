@@ -16,7 +16,7 @@ const title = "Tracker • Dashboard";
 const Dashboard = () => {
   const { user } = useContext(AuthenticationContext);
 
-  const { displayName: name } = user;
+  const { email } = user;
 
   useTitle(title);
 
@@ -25,14 +25,13 @@ const Dashboard = () => {
   return (
     <article className="dashboard">
       <div className="page__actions">
-        {" "}
         <Breadcrumbs>
           <Breadcrumb title="Dashboard" active />
         </Breadcrumbs>
       </div>
 
       <p className="dashboard__greeting">
-        Good {greeting}, {name}.
+        Good {greeting}, {email}.
       </p>
     </article>
   );

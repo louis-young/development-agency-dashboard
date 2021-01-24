@@ -1,25 +1,53 @@
 import React, { useEffect, useState, createContext } from "react";
 
-import { auth, provider } from "../firebase/firebase";
+import { auth } from "../firebase/firebase";
 
 const AuthenticationContext = createContext();
 
 const AuthenticationProvider = ({ children }) => {
-  const [authenticating, setAuthenticating] = useState(true);
+  const [authenticating, setAuthenticating] = useState(false);
+  const [error, setError] = useState("");
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+    setAuthenticating(true);
+
     auth.onAuthStateChanged((user) => {
       setAuthenticating(false);
 
       if (!user) return;
 
       setUser(user);
+
+      console.log(user);
     });
   }, []);
 
-  const signIn = () => {
-    auth.signInWithPopup(provider);
+  // const createUser = (email, password) => {
+  //   auth.createUserWithEmailAndPassword(email, password).catch((error) => {
+  //     setError(error.message);
+  //   });
+  // };
+
+  const sendPasswordResetEmail = (email) => {
+    auth
+      .sendPasswordResetEmail("louis@fluidstudiosltd.com")
+      .then(() => {
+        console.log("Sent");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+
+  const signIn = (email, password) => {
+    setAuthenticating(true);
+
+    auth.signInWithEmailAndPassword(email, password).catch((error) => {
+      setError(error.message);
+    });
+
+    setAuthenticating(false);
   };
 
   const signOut = () => {
@@ -29,7 +57,7 @@ const AuthenticationProvider = ({ children }) => {
   };
 
   return (
-    <AuthenticationContext.Provider value={{ user, authenticating, signIn, signOut }}>
+    <AuthenticationContext.Provider value={{ user, authenticating, error, signIn, signOut, sendPasswordResetEmail }}>
       {children}
     </AuthenticationContext.Provider>
   );

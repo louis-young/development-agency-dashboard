@@ -6,6 +6,7 @@ import { ProjectsContext } from "../../../context/ProjectsContext";
 import { ClientsContext } from "../../../context/ClientsContext";
 
 import { ROUTES } from "../../../constants/constants";
+import Loading from "../../Loading/Loading";
 
 const Project = ({ item }) => {
   const { id, client, stage, status, type, notes, action } = item;
@@ -16,26 +17,25 @@ const Project = ({ item }) => {
 
   const currentClient = clients?.find(({ id }) => id === client);
 
-  const deleteProject = () => {
-    // if (projectDomains.length) {
-    //   alert(`Please delete domains associated with ${company}.`);
-    //   return;
-    // }
-    // if (!window.confirm(`Are you sure you want to delete ${company}?`)) {
-    //   return;
-    // }
-    // deleteMutation.mutate(id);
-  };
-
   if (!currentClient) {
-    return <p>Loading client...</p>;
+    return <Loading />;
   }
+
+  const { company } = currentClient;
+
+  const deleteProject = () => {
+    if (!window.confirm(`Are you sure you want to delete ${company}?`)) {
+      return;
+    }
+
+    deleteMutation.mutate(id);
+  };
 
   return (
     <tr className="table__row">
       <td className="table__cell">
         <Link className="table__link" to={`${ROUTES.CLIENTS}/${currentClient.id}`}>
-          {currentClient.company}
+          {company}
         </Link>
       </td>
       <td className="table__cell">{stage}</td>

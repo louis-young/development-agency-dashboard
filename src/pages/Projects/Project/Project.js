@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 
 import { ProjectsContext } from "../../../context/ProjectsContext";
 import { DomainsContext } from "../../../context/DomainsContext";
+import { ClientsContext } from "../../../context/ClientsContext";
 
 import { ROUTES } from "../../../constants/constants";
 
@@ -21,27 +22,29 @@ const Project = () => {
   const { projects, deleteMutation } = useContext(ProjectsContext);
 
   const { domains } = useContext(DomainsContext);
+  const { clients } = useContext(ClientsContext);
 
-  if (!projects) {
+  if (!projects || !clients || !domains) {
     return <Loading />;
   }
 
-  const client = projects.find((client) => client.id === id);
+  const project = projects.find((project) => project.id === id);
+
+  if (!project) {
+    return <p>No project found.</p>;
+  }
+
+  const { stage, status, type, notes, action } = project;
+
+  const client = clients.find((client) => client.id === project.client);
 
   if (!client) {
     return <p>No client found.</p>;
   }
 
-  const clientDomains = domains?.filter((domain) => domain.company === id);
-
-  const { company, contact, email, phone } = client;
+  const { company } = client;
 
   const deleteProject = () => {
-    if (clientDomains.length) {
-      alert(`Please delete domains associated with ${company}.`);
-      return;
-    }
-
     if (!window.confirm(`Are you sure you want to delete ${company}?`)) {
       return;
     }
@@ -60,15 +63,13 @@ const Project = () => {
       </div>
 
       <p>Company: {company}</p>
-      <p>Contact: {contact}</p>
-      <p>Email: {email}</p>
-      <p>Phone: {phone}</p>
+      <p>Stage: {stage}</p>
+      <p>Status: {status}</p>
+      <p>Type: {type}</p>
+      <p>Notes: {notes}</p>
+      <p>Action: {action}</p>
 
-      <h3>Domains</h3>
-
-      <Table items={clientDomains} headers={headers} item={Domain} />
-
-      <Link className="button" to={`${ROUTES.CLIENTS}/${id}/edit`}>
+      <Link className="button" to={`${ROUTES.PROJECTS}/${id}/edit`}>
         Edit
       </Link>
       <button className="button button--small button--delete" onClick={deleteProject}>

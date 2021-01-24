@@ -8,5 +8,7 @@
   }
   &__page {
     padding: 1.5rem 2rem;
+    height: 89vh;
+    overflow-y: scroll;
   }
 }

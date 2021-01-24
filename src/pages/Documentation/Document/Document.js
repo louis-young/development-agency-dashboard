@@ -2,8 +2,6 @@ import React, { useContext } from "react";
 
 import { Link, useParams } from "react-router-dom";
 
-import Markdown from "react-markdown";
-
 import { DocumentationContext } from "../../../context/DocumentationContext";
 
 import { ROUTES } from "../../../constants/constants";
@@ -11,6 +9,7 @@ import { ROUTES } from "../../../constants/constants";
 import Breadcrumb from "../../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
 import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
 import Loading from "../../../components/Loading/Loading";
+import Markdown from "../../../components/Markdown/Markdown";
 
 const Document = () => {
   const { id } = useParams();
@@ -47,7 +46,7 @@ const Document = () => {
 
       <p>{description}</p>
 
-      <Markdown className="markdown">{content}</Markdown>
+      <Markdown>{content}</Markdown>
 
       <Link className="button" to={`${ROUTES.DOCUMENTATION}/${id}/edit`}>
         Edit

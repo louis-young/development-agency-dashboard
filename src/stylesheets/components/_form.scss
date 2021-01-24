@@ -1,7 +1,7 @@
 .form {
   margin-top: 1rem;
   width: 100%;
-  max-width: 500px;
+  max-width: 750px;
   &__label,
   &__input {
     width: 100%;
@@ -19,6 +19,9 @@
       background-repeat: no-repeat;
       background-position: right 0.7rem top 50%;
       background-size: 0.65rem auto;
+    }
+    &--markdown {
+      min-height: 600px;
     }
   }
 }

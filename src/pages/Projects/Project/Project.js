@@ -22,6 +22,7 @@ const Project = () => {
   const { projects, deleteMutation } = useContext(ProjectsContext);
 
   const { domains } = useContext(DomainsContext);
+
   const { clients } = useContext(ClientsContext);
 
   if (!projects || !clients || !domains) {
@@ -37,10 +38,6 @@ const Project = () => {
   const { stage, status, type, notes, action } = project;
 
   const client = clients.find((client) => client.id === project.client);
-
-  if (!client) {
-    return <p>No client found.</p>;
-  }
 
   const { company } = client;
 

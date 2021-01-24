@@ -8,13 +8,9 @@ import { ClientsContext } from "../../../context/ClientsContext";
 
 import { ROUTES } from "../../../constants/constants";
 
-import Domain from "../../../components/domains/Domain/Domain";
-import Table from "../../../components/Table/Table";
 import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
 import Breadcrumb from "../../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
 import Loading from "../../../components/Loading/Loading";
-
-const headers = ["Domain", "Client", "Provider", "Renewal", "Actions"];
 
 const Project = () => {
   const { id } = useParams();

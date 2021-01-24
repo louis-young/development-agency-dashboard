@@ -9,6 +9,7 @@ import { ProjectsContext } from "../../../context/ProjectsContext";
 
 import Breadcrumb from "../../Breadcrumbs/Breadcrumb/Breadcrumb";
 import Breadcrumbs from "../../Breadcrumbs/Breadcrumbs";
+import Loading from "../../Loading/Loading";
 
 const initialFields = {
   client: "",
@@ -40,8 +41,6 @@ const ProjectActions = () => {
 
   const editableProject = projects?.find((project) => project.id === id);
 
-  const currentClient = clients?.find((client) => client.id === editableProject?.client);
-
   useEffect(() => {
     if (!editableProject) {
       return;
@@ -72,7 +71,13 @@ const ProjectActions = () => {
   };
 
   if (editing && !editableProject) {
-    return <p>No project found.</p>;
+    return <Loading />;
+  }
+
+  const currentClient = clients?.find((client) => client.id === editableProject?.client);
+
+  if (editing && !currentClient) {
+    return <Loading />;
   }
 
   const action = editing ? "Edit" : "Add";
@@ -83,7 +88,7 @@ const ProjectActions = () => {
         <Breadcrumbs>
           <Breadcrumb title="Dashboard" link={ROUTES.DASHBOARD} />
           <Breadcrumb title="Projects" link={ROUTES.PROJECTS} />
-          {id && <Breadcrumb title={currentClient?.company} link={`${ROUTES.CLIENTS}/${currentClient?.id}`} />}
+          {id && <Breadcrumb title={currentClient.company} link={`${ROUTES.CLIENTS}/${currentClient.id}`} />}
           <Breadcrumb title={action} active />
         </Breadcrumbs>
       </div>

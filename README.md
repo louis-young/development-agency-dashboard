@@ -2,7 +2,7 @@
 
 React SPA front-end dashboard application integrated with Firebase backend and authentication.
 
-<!-- ![# Tracker](documentation/tracker.jpg) -->
+![# Tracker](documentation/tracker.jpg)
 
 ## Available Scripts
 

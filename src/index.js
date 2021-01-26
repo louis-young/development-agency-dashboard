@@ -12,7 +12,7 @@ import "./stylesheets/main.scss";
 ReactDOM.render(
   <React.StrictMode>
     <AuthenticationProvider>
-      <Router>
+      <Router basename="/tracker/">
         <Tracker />
       </Router>
     </AuthenticationProvider>

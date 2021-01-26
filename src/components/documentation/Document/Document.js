@@ -27,10 +27,10 @@ const Document = ({ item }) => {
         <Link className="button button--small button--view" to={`${ROUTES.DOCUMENTATION}/${id}`}>
           View
         </Link>
-        <Link className="button button--small button--edit" to={`${ROUTES.DOCUMENTATION}/${id}/edit`}>
+        <Link className="button button--small button--edit button--inline" to={`${ROUTES.DOCUMENTATION}/${id}/edit`}>
           Edit
         </Link>
-        <button className="button button--small button--delete" onClick={deleteDocument}>
+        <button className="button button--small button--delete button--inline" onClick={deleteDocument}>
           Delete
         </button>
       </td>

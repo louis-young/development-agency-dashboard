@@ -44,7 +44,7 @@ const Projects = () => {
         </Link>
       </div>
 
-      <Search search={search} setSearch={setSearch} placeholder="Search Projects..." />
+      <Search search={search} setSearch={setSearch} placeholder="Search projects..." />
 
       <Table loading={loading} error={error} headers={headers} items={items} item={Project} />
     </article>

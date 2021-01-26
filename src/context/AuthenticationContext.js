@@ -18,8 +18,6 @@ const AuthenticationProvider = ({ children }) => {
       if (!user) return;
 
       setUser(user);
-
-      console.log(user);
     });
   }, []);
 
@@ -29,25 +27,16 @@ const AuthenticationProvider = ({ children }) => {
   //   });
   // };
 
-  const sendPasswordResetEmail = (email) => {
-    auth
-      .sendPasswordResetEmail("louis@fluidstudiosltd.com")
-      .then(() => {
-        console.log("Sent");
-      })
-      .catch((error) => {
-        setError(error.message);
-      });
-  };
-
   const signIn = (email, password) => {
+    setError(null);
+
     setAuthenticating(true);
 
     auth.signInWithEmailAndPassword(email, password).catch((error) => {
       setError(error.message);
-    });
 
-    setAuthenticating(false);
+      setAuthenticating(false);
+    });
   };
 
   const signOut = () => {
@@ -57,7 +46,7 @@ const AuthenticationProvider = ({ children }) => {
   };
 
   return (
-    <AuthenticationContext.Provider value={{ user, authenticating, error, signIn, signOut, sendPasswordResetEmail }}>
+    <AuthenticationContext.Provider value={{ user, authenticating, error, signIn, signOut }}>
       {children}
     </AuthenticationContext.Provider>
   );

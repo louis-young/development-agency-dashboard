@@ -47,10 +47,10 @@ const Project = ({ item }) => {
         <Link className="button button--small button--view" to={`${ROUTES.PROJECTS}/${id}`}>
           View
         </Link>
-        <Link className="button button--small button--edit" to={`${ROUTES.PROJECTS}/${id}/edit`}>
+        <Link className="button button--small button--edit button--inline" to={`${ROUTES.PROJECTS}/${id}/edit`}>
           Edit
         </Link>
-        <button className="button button--small button--delete" onClick={deleteProject}>
+        <button className="button button--small button--delete button--inline" onClick={deleteProject}>
           Delete
         </button>
       </td>

@@ -1,0 +1,16 @@
+@import "../../stylesheets/abstracts/breakpoints";
+@import "../../stylesheets/abstracts/variables";
+@import "../../stylesheets/abstracts/extends";
+@import "../../stylesheets/base/typography";
+
+.notification {
+  @extend %round;
+  background: $primary-color;
+  padding: 1rem;
+  margin: 1rem 0;
+  &__message {
+    padding: unset;
+    color: $white;
+    line-height: 1.5;
+  }
+}

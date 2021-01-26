@@ -44,7 +44,7 @@ const Domain = ({ item }) => {
         <Link className="button button--small button--edit" to={`${ROUTES.DOMAINS}/${id}/edit`}>
           Edit
         </Link>
-        <button className="button button--small button--delete" onClick={deleteDomain}>
+        <button className="button button--small button--delete button--inline" onClick={deleteDomain}>
           Delete
         </button>
       </td>

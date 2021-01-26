@@ -66,14 +66,16 @@ const Client = () => {
 
       <h3>Domains</h3>
 
-      <Table items={clientDomains} headers={headers} item={Domain} />
+      <div className="page__buttons">
+        <Link className="button" to={`${ROUTES.CLIENTS}/${id}/edit`}>
+          Edit
+        </Link>
+        <button className="button button--small button--delete" onClick={deleteClient}>
+          Delete
+        </button>
+      </div>
 
-      <Link className="button" to={`${ROUTES.CLIENTS}/${id}/edit`}>
-        Edit
-      </Link>
-      <button className="button button--small button--delete" onClick={deleteClient}>
-        Delete
-      </button>
+      <Table items={clientDomains} headers={headers} item={Domain} />
     </section>
   );
 };

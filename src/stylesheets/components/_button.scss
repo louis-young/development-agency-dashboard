@@ -58,25 +58,16 @@
   &--delete {
     background: #e76767;
     &:hover {
-      background: #e76767;
+      background: #c45252;
     }
   }
-  // &--add {
-  //   background: #61bd4a;
-  //   &:hover {
-  //     background: #61bd4a;
-  //   }
-  // }
   &--edit {
     background: #a7a7a7;
     &:hover {
-      background: #a7a7a7;
+      background: #858585;
     }
   }
-  // &--view {
-  //   background: #a7a7a7;
-  //   &:hover {
-  //     background: #a7a7a7;
-  //   }
-  // }
+  &--inline {
+    margin-left: 1rem;
+  }
 }

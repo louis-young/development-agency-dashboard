@@ -62,12 +62,14 @@ const Project = () => {
       <p>Notes: {notes}</p>
       <p>Action: {action}</p>
 
-      <Link className="button" to={`${ROUTES.PROJECTS}/${id}/edit`}>
-        Edit
-      </Link>
-      <button className="button button--small button--delete" onClick={deleteProject}>
-        Delete
-      </button>
+      <div className="page__buttons">
+        <Link className="button" to={`${ROUTES.PROJECTS}/${id}/edit`}>
+          Edit
+        </Link>
+        <button className="button button--small button--delete" onClick={deleteProject}>
+          Delete
+        </button>
+      </div>
     </section>
   );
 };

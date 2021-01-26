@@ -4,10 +4,15 @@ import { AuthenticationContext } from "../../context/AuthenticationContext";
 
 import useTitle from "../../hooks/useTitle";
 
+import Logo from "../../components/Logo/Logo";
+
+import "./Login.scss";
+import Notification from "../../components/Notification/Notification";
+
 const title = "Tracker • Login";
 
 const Login = () => {
-  const { signIn, authenticating, error, sendPasswordResetEmail } = useContext(AuthenticationContext);
+  const { signIn, authenticating, error } = useContext(AuthenticationContext);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,37 +26,43 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
+    <section className="login">
+      <article className="container container--extra-small">
+        <Logo dark />
 
-      {error && <p>{error}</p>}
+        {error && <Notification message={error} />}
 
-      <form className="form" onSubmit={handleSubmit}>
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          className="form__input"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          className="form__input"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-          required
-        />
-        <button className="button form__submit" type="submit" disabled={authenticating}>
-          Sign In
-        </button>
-      </form>
-
-      <button onClick={sendPasswordResetEmail}>Reset Password</button>
-    </div>
+        <form className="form" onSubmit={handleSubmit}>
+          <label className="form__label">
+            Email
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              className="form__input"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              required
+            />
+          </label>
+          <label className="form__label">
+            Password
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              className="form__input"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              required
+            />
+          </label>
+          <button className="button form__submit" type="submit" disabled={authenticating}>
+            Sign In
+          </button>
+        </form>
+      </article>
+    </section>
   );
 };
 

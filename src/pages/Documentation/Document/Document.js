@@ -11,6 +11,8 @@ import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
 import Loading from "../../../components/Loading/Loading";
 import Markdown from "../../../components/Markdown/Markdown";
 
+import "./Document.scss";
+
 const Document = () => {
   const { id } = useParams();
 
@@ -42,18 +44,24 @@ const Document = () => {
         </Breadcrumbs>
       </div>
 
-      <h3>{title}</h3>
+      <article className="document">
+        <h3>{title}</h3>
 
-      <p>{description}</p>
+        <p>{description}</p>
 
-      <Markdown>{content}</Markdown>
+        <article className="document__markdown">
+          <Markdown>{content}</Markdown>
+        </article>
+      </article>
 
-      <Link className="button" to={`${ROUTES.DOCUMENTATION}/${id}/edit`}>
-        Edit
-      </Link>
-      <button className="button button--small button--delete" onClick={deleteDocument}>
-        Delete
-      </button>
+      <div className="page__buttons">
+        <Link className="button" to={`${ROUTES.DOCUMENTATION}/${id}/edit`}>
+          Edit
+        </Link>
+        <button className="button button--small button--delete" onClick={deleteDocument}>
+          Delete
+        </button>
+      </div>
     </section>
   );
 };

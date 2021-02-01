@@ -11,11 +11,16 @@ import Notification from "../../components/Notification/Notification";
 
 const title = "Tracker • Login";
 
+const initialUser = {
+  email: "test@domain.tld",
+  password: "69K+mEEN~ydy.`/J",
+};
+
 const Login = () => {
   const { signIn, authenticating, error } = useContext(AuthenticationContext);
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState(initialUser.email);
+  const [password, setPassword] = useState(initialUser.password);
 
   useTitle(title);
 

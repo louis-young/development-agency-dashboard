@@ -15,10 +15,6 @@ const Table = ({ loading, error, headers, items, item: Item }) => {
     return <p>Error loading items.</p>;
   }
 
-  if (!items || !items.length) {
-    return <p>No items.</p>;
-  }
-
   return (
     <table className="table">
       <thead>

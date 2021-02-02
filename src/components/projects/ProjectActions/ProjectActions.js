@@ -82,7 +82,7 @@ const ProjectActions = () => {
 
     setFields((fields) => ({
       ...fields,
-      search: company,
+      company,
     }));
   };
 

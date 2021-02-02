@@ -11,7 +11,7 @@ import ProjectActions from "../components/projects/ProjectActions/ProjectActions
 import Projects from "../pages/Projects/Projects";
 
 import ClientActions from "../components/clients/ClientActions/ClientActions";
-//import Client from "../pages/Clients/Client/Client";
+import Client from "../pages/Clients/Client/Client";
 import Clients from "../pages/Clients/Clients";
 
 import DomainActions from "../components/domains/DomainActions/DomainActions";
@@ -39,7 +39,7 @@ const Routes = () => {
 
       <Route path={`${ROUTES.CLIENTS}${ACTIONS.ADD}`} component={ClientActions} />
       <Route path={`${ROUTES.CLIENTS}${ACTIONS.EDIT}`} component={ClientActions} />
-      <Route path={`${ROUTES.CLIENTS}${ACTIONS.VIEW}`} component={ClientActions} />
+      <Route path={`${ROUTES.CLIENTS}${ACTIONS.VIEW}`} component={Client} />
       <Route path={ROUTES.CLIENTS} component={Clients} />
 
       <Route path={`${ROUTES.DOMAINS}${ACTIONS.ADD}`} component={DomainActions} />

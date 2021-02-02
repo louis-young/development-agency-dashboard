@@ -17,4 +17,8 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
   }
+  &__title {
+    margin: 1rem 0;
+    padding: unset;
+  }
 }

@@ -1,7 +1,11 @@
 import { database } from "../firebase/firebase";
 
 const getCollection = async (name) => {
-  const collection = await database.collection(name).get();
+  const FIELD = "created";
+
+  const SORT = "desc";
+
+  const collection = await database.collection(name).orderBy(FIELD, SORT).get();
 
   const data = collection.docs.map((document) => ({ id: document.id, ...document.data() }));
 
@@ -9,11 +13,18 @@ const getCollection = async (name) => {
 };
 
 const addDocument = async (collection, document) => {
-  await database.collection(collection).add(document);
+  const timestamp = Date.now();
+
+  await database.collection(collection).add({ ...document, created: timestamp, modified: timestamp });
 };
 
 const editDocument = async (collection, document) => {
-  await database.collection(collection).doc(document.id).update(document);
+  const timestamp = Date.now();
+
+  await database
+    .collection(collection)
+    .doc(document.id)
+    .update({ ...document, modified: timestamp });
 };
 
 const deleteDocument = async (collection, id) => {

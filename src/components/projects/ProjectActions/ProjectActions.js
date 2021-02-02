@@ -62,11 +62,28 @@ const ProjectActions = () => {
   };
 
   const handleInputChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value, options } = event.target;
 
     setFields((fields) => ({
       ...fields,
       [name]: value,
+    }));
+
+    // Add searchable (company) field to document.
+
+    if (!options) {
+      return;
+    }
+
+    const company = event.target.options[event.target.selectedIndex].dataset.company;
+
+    if (!company) {
+      return;
+    }
+
+    setFields((fields) => ({
+      ...fields,
+      search: company,
     }));
   };
 
@@ -105,7 +122,7 @@ const ProjectActions = () => {
           >
             {!editableProject && <option value="">Select a client...</option>}
             {clients?.map((client) => (
-              <option key={client.id} value={client.id}>
+              <option key={client.id} value={client.id} data-company={client.company}>
                 {client.company}
               </option>
             ))}

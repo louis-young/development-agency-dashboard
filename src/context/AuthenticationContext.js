@@ -21,11 +21,11 @@ const AuthenticationProvider = ({ children }) => {
     });
   }, []);
 
-  // const createUser = (email, password) => {
-  //   auth.createUserWithEmailAndPassword(email, password).catch((error) => {
-  //     setError(error.message);
-  //   });
-  // };
+  const createUser = (email, password) => {
+    auth.createUserWithEmailAndPassword(email, password).catch((error) => {
+      setError(error.message);
+    });
+  };
 
   const signIn = (email, password) => {
     setError(null);
@@ -46,7 +46,7 @@ const AuthenticationProvider = ({ children }) => {
   };
 
   return (
-    <AuthenticationContext.Provider value={{ user, authenticating, error, signIn, signOut }}>
+    <AuthenticationContext.Provider value={{ user, authenticating, error, signIn, signOut, createUser }}>
       {children}
     </AuthenticationContext.Provider>
   );

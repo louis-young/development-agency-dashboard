@@ -6,7 +6,7 @@ import { ClientsContext } from "../../../context/ClientsContext";
 import { DomainsContext } from "../../../context/DomainsContext";
 import { ProjectsContext } from "../../../context/ProjectsContext";
 
-import { ROUTES } from "../../../constants/constants";
+import { HEADERS, ROUTES } from "../../../constants/constants";
 
 import Domain from "../../../components/Table/DomainRow/DomainRow";
 import Project from "../../../components/Table/ProjectRow/ProjectRow";
@@ -14,10 +14,6 @@ import Table from "../../../components/Table/Table";
 import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
 import Breadcrumb from "../../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
 import Loading from "../../../components/Loading/Loading";
-
-const domainHeaders = ["Domain", "Client", "Provider", "Renewal", "Actions"];
-
-const projectHeaders = ["Client", "Stage", "Status", "Type", "Notes", "Next Action", "Actions"];
 
 const Client = () => {
   const { id } = useParams();
@@ -102,11 +98,11 @@ const Client = () => {
 
       <h4 className="page__title">Domains</h4>
 
-      <Table items={clientDomains} headers={domainHeaders} item={Domain} />
+      <Table items={clientDomains} headers={HEADERS.DOMAINS} item={Domain} />
 
       <h4 className="page__title">Projects</h4>
 
-      <Table items={clientProjects} headers={projectHeaders} item={Project} />
+      <Table items={clientProjects} headers={HEADERS.PROJECTS} item={Project} />
     </section>
   );
 };

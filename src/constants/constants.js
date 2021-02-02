@@ -13,4 +13,11 @@ const COLLECTIONS = {
   PROJECTS: "projects",
 };
 
-export { ROUTES, COLLECTIONS };
+const HEADERS = {
+  PROJECTS: ["Client", "Stage", "Status", "Type", "Notes", "Next Action", "Actions"],
+  CLIENTS: ["Company", "Contact", "Email", "Phone", "Actions"],
+  DOMAINS: ["Domain", "Client", "Provider", "Renewal", "Actions"],
+  DOCUMENTATION: ["Title", "Description", "Actions"],
+};
+
+export { ROUTES, COLLECTIONS, HEADERS };

@@ -6,7 +6,7 @@ import { DocumentationContext } from "../../context/DocumentationContext";
 
 import useTitle from "../../hooks/useTitle";
 
-import { ROUTES } from "../../constants/constants";
+import { HEADERS, ROUTES } from "../../constants/constants";
 
 import { searchArrayOfObjects } from "../../utilities/utilities";
 
@@ -17,8 +17,6 @@ import Search from "../../components/Search/Search";
 import Table from "../../components/Table/Table";
 
 const title = "Tracker • Documentation";
-
-const headers = ["Title", "Description", "Actions"];
 
 const Documentation = () => {
   const [search, setSearch] = useState("");
@@ -46,7 +44,7 @@ const Documentation = () => {
 
       <Search search={search} setSearch={setSearch} placeholder="Search documentation..." />
 
-      <Table loading={loading} error={error} headers={headers} items={items} item={DocumentRow} />
+      <Table loading={loading} error={error} headers={HEADERS.DOCUMENTATION} items={items} item={DocumentRow} />
     </article>
   );
 };

@@ -6,7 +6,7 @@ import { DomainsContext } from "../../context/DomainsContext";
 
 import useTitle from "../../hooks/useTitle";
 
-import { ROUTES } from "../../constants/constants";
+import { HEADERS, ROUTES } from "../../constants/constants";
 
 import { searchArrayOfObjects } from "../../utilities/utilities";
 
@@ -17,8 +17,6 @@ import Table from "../../components/Table/Table";
 import Search from "../../components/Search/Search";
 
 const title = "Tracker • Domains";
-
-const headers = ["Domain", "Company", "Platform", "Renewal", "Actions"];
 
 const Domains = () => {
   const [search, setSearch] = useState("");
@@ -46,7 +44,7 @@ const Domains = () => {
 
       <Search search={search} setSearch={setSearch} placeholder="Search domains..." />
 
-      <Table loading={loading} error={error} headers={headers} items={items} item={DomainRow} />
+      <Table loading={loading} error={error} headers={HEADERS.DOMAINS} items={items} item={DomainRow} />
     </article>
   );
 };

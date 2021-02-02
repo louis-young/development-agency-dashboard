@@ -6,7 +6,7 @@ import { ProjectsContext } from "../../context/ProjectsContext";
 
 import useTitle from "../../hooks/useTitle";
 
-import { ROUTES } from "../../constants/constants";
+import { HEADERS, ROUTES } from "../../constants/constants";
 
 import { searchArrayOfObjects } from "../../utilities/utilities";
 
@@ -17,8 +17,6 @@ import Breadcrumb from "../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
 import Table from "../../components/Table/Table";
 
 const title = "Tracker • Projects";
-
-const headers = ["Client", "Stage", "Status", "Type", "Notes", "Next Action", "Actions"];
 
 const Projects = () => {
   const [search, setSearch] = useState("");
@@ -46,7 +44,7 @@ const Projects = () => {
 
       <Search search={search} setSearch={setSearch} placeholder="Search projects..." />
 
-      <Table loading={loading} error={error} headers={headers} items={items} item={ProjectRow} />
+      <Table loading={loading} error={error} headers={HEADERS.PROJECTS} items={items} item={ProjectRow} />
     </article>
   );
 };

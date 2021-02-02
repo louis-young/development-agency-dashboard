@@ -6,7 +6,7 @@ import { ClientsContext } from "../../context/ClientsContext";
 
 import useTitle from "../../hooks/useTitle";
 
-import { ROUTES } from "../../constants/constants";
+import { HEADERS, ROUTES } from "../../constants/constants";
 
 import { searchArrayOfObjects } from "../../utilities/utilities";
 
@@ -17,8 +17,6 @@ import Breadcrumb from "../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
 import Table from "../../components/Table/Table";
 
 const title = "Tracker • Clients";
-
-const headers = ["Company", "Contact", "Email", "Phone", "Actions"];
 
 const Clients = () => {
   const [search, setSearch] = useState("");
@@ -46,7 +44,7 @@ const Clients = () => {
 
       <Search search={search} setSearch={setSearch} placeholder="Search clients..." />
 
-      <Table loading={loading} error={error} headers={headers} items={items} item={ClientRow} />
+      <Table loading={loading} error={error} headers={HEADERS.CLIENTS} items={items} item={ClientRow} />
     </article>
   );
 };

@@ -5,5 +5,12 @@
   transform: translateX(-50%) translateY(-50%);
   z-index: 1;
   width: 75px;
-  opacity: 0.75;
+  &--inline {
+    position: static;
+    transform: unset;
+    top: unset;
+    left: unset;
+    width: 35px;
+    opacity: 0.75;
+  }
 }

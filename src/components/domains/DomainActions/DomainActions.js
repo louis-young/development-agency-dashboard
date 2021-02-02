@@ -63,7 +63,7 @@ const DomainActions = () => {
   };
 
   if (!domains) {
-    return <Loading />;
+    return <Loading inline />;
   }
 
   if (editing && !editableDomain) {

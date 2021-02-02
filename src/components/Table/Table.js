@@ -6,7 +6,7 @@ import "./Table.scss";
 
 const Table = ({ loading, error, headers, items, item: Item }) => {
   if (loading) {
-    return <Loading />;
+    return <Loading inline />;
   }
 
   if (error) {

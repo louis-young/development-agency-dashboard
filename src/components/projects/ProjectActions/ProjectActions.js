@@ -70,7 +70,6 @@ const ProjectActions = () => {
     }));
 
     // Add searchable (company) field to document.
-
     if (!options) {
       return;
     }
@@ -88,13 +87,13 @@ const ProjectActions = () => {
   };
 
   if (editing && !editableProject) {
-    return <Loading />;
+    return <Loading inline />;
   }
 
   const currentClient = clients?.find((client) => client.id === editableProject?.client);
 
   if (editing && !currentClient) {
-    return <Loading />;
+    return <Loading inline />;
   }
 
   const action = editing ? "Edit" : "Add";

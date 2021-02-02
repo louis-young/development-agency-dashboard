@@ -4,8 +4,10 @@ import loading from "../../assets/loading/loading.svg";
 
 import "./Loading.scss";
 
-const Loading = () => {
-  return <img className="loading" src={loading} alt="Loading..." />;
+const Loading = ({ inline }) => {
+  const className = inline ? "loading loading--inline" : "loading";
+
+  return <img className={className} src={loading} alt="Loading..." />;
 };
 
 export default Loading;

@@ -16,7 +16,7 @@ const initialFields = {
   email: "",
 };
 
-const ClientActions = () => {
+const ClientForm = () => {
   const { id } = useParams();
 
   const history = useHistory();
@@ -132,4 +132,4 @@ const ClientActions = () => {
   );
 };
 
-export default ClientActions;
+export default ClientForm;

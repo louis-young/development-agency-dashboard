@@ -55,12 +55,37 @@ const Project = () => {
         </Breadcrumbs>
       </div>
 
-      <p>Company: {company}</p>
-      <p>Stage: {stage}</p>
-      <p>Status: {status}</p>
-      <p>Type: {type}</p>
-      <p>Notes: {notes}</p>
-      <p>Action: {action}</p>
+      <form className="form">
+        <label className="form__label">
+          Client
+          <input className="form__input" name="client" type="text" value={company} readOnly />
+        </label>
+
+        <label className="form__label">
+          Stage
+          <input className="form__input" name="stage" type="text" value={stage} readOnly />
+        </label>
+
+        <label className="form__label">
+          Status
+          <input className="form__input" name="status" type="text" value={status} readOnly />
+        </label>
+
+        <label className="form__label">
+          Type
+          <input className="form__input" name="type" type="text" value={type} readOnly />
+        </label>
+
+        <label className="form__label">
+          Notes
+          <input className="form__input" name="notes" type="text" value={notes} readOnly />
+        </label>
+
+        <label className="form__label">
+          Next Action
+          <input className="form__input" name="action" type="date" value={action} readOnly />
+        </label>
+      </form>
 
       <div className="page__buttons">
         <Link className="button" to={`${ROUTES.PROJECTS}/${id}/edit`}>

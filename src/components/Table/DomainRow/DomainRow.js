@@ -7,7 +7,7 @@ import { ClientsContext } from "../../../context/ClientsContext";
 
 import { ROUTES } from "../../../constants/constants";
 
-const Domain = ({ item }) => {
+const DomainRow = ({ item }) => {
   const { id, company, domain, platform, renewal } = item;
 
   const { deleteMutation } = useContext(DomainsContext);
@@ -52,4 +52,4 @@ const Domain = ({ item }) => {
   );
 };
 
-export default Domain;
+export default DomainRow;

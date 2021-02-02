@@ -10,7 +10,7 @@ import { ROUTES } from "../../constants/constants";
 
 import { searchArrayOfObjects } from "../../utilities/utilities";
 
-import Client from "../../components/clients/Client/Client";
+import ClientRow from "../../components/Table/ClientRow/ClientRow";
 import Search from "../../components/Search/Search";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import Breadcrumb from "../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
@@ -46,7 +46,7 @@ const Clients = () => {
 
       <Search search={search} setSearch={setSearch} placeholder="Search clients..." />
 
-      <Table loading={loading} error={error} headers={headers} items={items} item={Client} />
+      <Table loading={loading} error={error} headers={headers} items={items} item={ClientRow} />
     </article>
   );
 };

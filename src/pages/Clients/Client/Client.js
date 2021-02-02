@@ -8,8 +8,8 @@ import { ProjectsContext } from "../../../context/ProjectsContext";
 
 import { ROUTES } from "../../../constants/constants";
 
-import Domain from "../../../components/domains/Domain/Domain";
-import Project from "../../../components/projects/Project/Project";
+import Domain from "../../../components/Table/DomainRow/DomainRow";
+import Project from "../../../components/Table/ProjectRow/ProjectRow";
 import Table from "../../../components/Table/Table";
 import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
 import Breadcrumb from "../../../components/Breadcrumbs/Breadcrumb/Breadcrumb";

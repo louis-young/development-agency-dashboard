@@ -10,7 +10,7 @@ import { ROUTES } from "../../constants/constants";
 
 import { searchArrayOfObjects } from "../../utilities/utilities";
 
-import Document from "../../components/documentation/Document/Document";
+import DocumentRow from "../../components/Table/DocumentRow/DocumentRow";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import Breadcrumb from "../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
 import Search from "../../components/Search/Search";
@@ -46,7 +46,7 @@ const Documentation = () => {
 
       <Search search={search} setSearch={setSearch} placeholder="Search documentation..." />
 
-      <Table loading={loading} error={error} headers={headers} items={items} item={Document} />
+      <Table loading={loading} error={error} headers={headers} items={items} item={DocumentRow} />
     </article>
   );
 };

@@ -16,7 +16,7 @@ const initialFields = {
   content: "",
 };
 
-const DocumentActions = () => {
+const DocumentForm = () => {
   const { id } = useParams();
 
   const history = useHistory();
@@ -123,4 +123,4 @@ const DocumentActions = () => {
   );
 };
 
-export default DocumentActions;
+export default DocumentForm;

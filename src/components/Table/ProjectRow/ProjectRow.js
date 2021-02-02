@@ -8,7 +8,7 @@ import { ClientsContext } from "../../../context/ClientsContext";
 import { ROUTES } from "../../../constants/constants";
 import Loading from "../../Loading/Loading";
 
-const Project = ({ item }) => {
+const ProjectRow = ({ item }) => {
   const { id, client, stage, status, type, notes, action } = item;
 
   const { deleteMutation } = useContext(ProjectsContext);
@@ -58,4 +58,4 @@ const Project = ({ item }) => {
   );
 };
 
-export default Project;
+export default ProjectRow;

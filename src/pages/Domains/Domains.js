@@ -10,7 +10,7 @@ import { ROUTES } from "../../constants/constants";
 
 import { searchArrayOfObjects } from "../../utilities/utilities";
 
-import Domain from "../../components/domains/Domain/Domain";
+import DomainRow from "../../components/Table/DomainRow/DomainRow";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import Breadcrumb from "../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
 import Table from "../../components/Table/Table";
@@ -46,7 +46,7 @@ const Domains = () => {
 
       <Search search={search} setSearch={setSearch} placeholder="Search domains..." />
 
-      <Table loading={loading} error={error} headers={headers} items={items} item={Domain} />
+      <Table loading={loading} error={error} headers={headers} items={items} item={DomainRow} />
     </article>
   );
 };

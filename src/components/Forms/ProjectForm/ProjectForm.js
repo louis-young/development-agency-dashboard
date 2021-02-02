@@ -26,7 +26,7 @@ const statuses = ["Working", "Hold", "Waiting", "Chase", "Parked"];
 
 const types = ["WordPress", "WooCommerce", "ProcessWire", "Static"];
 
-const ProjectActions = () => {
+const ProjectForm = () => {
   const { id } = useParams();
 
   const history = useHistory();
@@ -207,4 +207,4 @@ const ProjectActions = () => {
   );
 };
 
-export default ProjectActions;
+export default ProjectForm;

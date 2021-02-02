@@ -10,7 +10,7 @@ import { ROUTES } from "../../constants/constants";
 
 import { searchArrayOfObjects } from "../../utilities/utilities";
 
-import Project from "../../components/projects/Project/Project";
+import ProjectRow from "../../components/Table/ProjectRow/ProjectRow";
 import Search from "../../components/Search/Search";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import Breadcrumb from "../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
@@ -46,7 +46,7 @@ const Projects = () => {
 
       <Search search={search} setSearch={setSearch} placeholder="Search projects..." />
 
-      <Table loading={loading} error={error} headers={headers} items={items} item={Project} />
+      <Table loading={loading} error={error} headers={headers} items={items} item={ProjectRow} />
     </article>
   );
 };

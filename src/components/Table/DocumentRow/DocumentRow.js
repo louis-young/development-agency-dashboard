@@ -6,7 +6,7 @@ import { DocumentationContext } from "../../../context/DocumentationContext";
 
 import { ROUTES } from "../../../constants/constants";
 
-const Document = ({ item }) => {
+const DocumentRow = ({ item }) => {
   const { id, title, description } = item;
 
   const { deleteMutation } = useContext(DocumentationContext);
@@ -38,4 +38,4 @@ const Document = ({ item }) => {
   );
 };
 
-export default Document;
+export default DocumentRow;

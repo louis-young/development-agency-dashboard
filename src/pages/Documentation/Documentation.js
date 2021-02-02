@@ -44,7 +44,7 @@ const Documentation = () => {
 
       <Search search={search} setSearch={setSearch} placeholder="Search documentation..." />
 
-      <Table loading={loading} error={error} headers={HEADERS.DOCUMENTATION} items={items} item={DocumentRow} />
+      <Table loading={loading} error={error} headers={HEADERS.DOCUMENTATION} items={items} row={DocumentRow} />
     </article>
   );
 };

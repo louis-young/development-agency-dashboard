@@ -44,7 +44,7 @@ const Projects = () => {
 
       <Search search={search} setSearch={setSearch} placeholder="Search projects..." />
 
-      <Table loading={loading} error={error} headers={HEADERS.PROJECTS} items={items} item={ProjectRow} />
+      <Table loading={loading} error={error} headers={HEADERS.PROJECTS} items={items} row={ProjectRow} />
     </article>
   );
 };

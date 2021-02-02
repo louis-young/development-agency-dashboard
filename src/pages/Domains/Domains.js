@@ -44,7 +44,7 @@ const Domains = () => {
 
       <Search search={search} setSearch={setSearch} placeholder="Search domains..." />
 
-      <Table loading={loading} error={error} headers={HEADERS.DOMAINS} items={items} item={DomainRow} />
+      <Table loading={loading} error={error} headers={HEADERS.DOMAINS} items={items} row={DomainRow} />
     </article>
   );
 };

@@ -6,7 +6,7 @@ import Loading from "../Loading/Loading";
 
 import "./Table.scss";
 
-const Table = ({ loading, error, headers, items, item: Item }) => {
+const Table = ({ loading, error, headers, items, row: Row }) => {
   if (loading) {
     return <Loading inline />;
   }
@@ -28,7 +28,7 @@ const Table = ({ loading, error, headers, items, item: Item }) => {
       </thead>
       <tbody className="table__body">
         {items.map((item) => (
-          <Item key={item.id} item={item} />
+          <Row key={item.id} item={item} />
         ))}
       </tbody>
     </table>

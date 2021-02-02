@@ -44,7 +44,7 @@ const Clients = () => {
 
       <Search search={search} setSearch={setSearch} placeholder="Search clients..." />
 
-      <Table loading={loading} error={error} headers={HEADERS.CLIENTS} items={items} item={ClientRow} />
+      <Table loading={loading} error={error} headers={HEADERS.CLIENTS} items={items} row={ClientRow} />
     </article>
   );
 };

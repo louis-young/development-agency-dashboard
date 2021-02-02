@@ -8,8 +8,8 @@ import { ProjectsContext } from "../../../context/ProjectsContext";
 
 import { HEADERS, ROUTES } from "../../../constants/constants";
 
-import Domain from "../../../components/Table/DomainRow/DomainRow";
-import Project from "../../../components/Table/ProjectRow/ProjectRow";
+import DomainRow from "../../../components/Table/DomainRow/DomainRow";
+import ProjectRow from "../../../components/Table/ProjectRow/ProjectRow";
 import Table from "../../../components/Table/Table";
 import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
 import Breadcrumb from "../../../components/Breadcrumbs/Breadcrumb/Breadcrumb";
@@ -98,11 +98,11 @@ const Client = () => {
 
       <h4 className="page__title">Domains</h4>
 
-      <Table items={clientDomains} headers={HEADERS.DOMAINS} item={Domain} />
+      <Table items={clientDomains} headers={HEADERS.DOMAINS} row={DomainRow} />
 
       <h4 className="page__title">Projects</h4>
 
-      <Table items={clientProjects} headers={HEADERS.PROJECTS} item={Project} />
+      <Table items={clientProjects} headers={HEADERS.PROJECTS} row={ProjectRow} />
     </section>
   );
 };

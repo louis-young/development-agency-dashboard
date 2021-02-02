@@ -20,11 +20,11 @@ const initialFields = {
   action: "",
 };
 
-const stages = ["Research", "Concept", "Design", "Build", "Review", "Launch"];
+const STAGES = ["Research", "Concept", "Design", "Build", "Review", "Launch"];
 
-const statuses = ["Working", "Hold", "Waiting", "Chase", "Parked"];
+const STATUSES = ["Working", "Waiting", "Chasing", "Parked"];
 
-const types = ["WordPress", "WooCommerce", "ProcessWire", "Static"];
+const TYPES = ["React", "Next", "Gatsby", "Static"];
 
 const ProjectForm = () => {
   const { id } = useParams();
@@ -138,7 +138,7 @@ const ProjectForm = () => {
             required
           >
             {!fields.stage && <option value="">Select a stage...</option>}
-            {stages.map((stage) => (
+            {STAGES.map((stage) => (
               <option key={stage} value={stage}>
                 {stage}
               </option>
@@ -156,7 +156,7 @@ const ProjectForm = () => {
             required
           >
             {!fields.status && <option value="">Select a status...</option>}
-            {statuses.map((status) => (
+            {STATUSES.map((status) => (
               <option key={status} value={status}>
                 {status}
               </option>
@@ -174,7 +174,7 @@ const ProjectForm = () => {
             required
           >
             {!fields.type && <option value="">Select a type...</option>}
-            {types.map((type) => (
+            {TYPES.map((type) => (
               <option key={type} value={type}>
                 {type}
               </option>

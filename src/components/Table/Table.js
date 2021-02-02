@@ -16,6 +16,10 @@ const Table = ({ loading, error, headers, items, row: Row }) => {
     return <Notification message="Error loading items." />;
   }
 
+  if (!items) {
+    return <Loading inline />;
+  }
+
   return (
     <table className="table">
       <thead>

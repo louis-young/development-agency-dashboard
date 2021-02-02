@@ -9,7 +9,6 @@
   border-collapse: collapse;
   width: 100%;
   text-align: left;
-  border: $border;
   background: $white;
   &__header {
     color: $dark-text;
@@ -18,12 +17,22 @@
     font-size: 0.95rem;
     padding: $mobile-padding;
     background: $white;
-    @include tablet {
+    @include laptop {
       font-size: 1.15rem;
       padding: $desktop-padding;
     }
     &--actions {
       width: 310px;
+    }
+    &--next-action,
+    &--renewal {
+      min-width: 120px;
+    }
+    &--phone {
+      min-width: 130px;
+    }
+    &--description {
+      min-width: 200px;
     }
   }
   &__row {
@@ -34,16 +43,18 @@
   &__row,
   &__cell {
     padding: $mobile-padding;
-    @include tablet {
+    @include laptop {
       padding: $desktop-padding;
     }
   }
   &__cell {
     border: solid $dark-grey 1px;
+    border-bottom: unset;
     font-size: 0.95rem;
     padding-top: $mobile-padding;
     padding-bottom: $mobile-padding;
-    @include tablet {
+    line-height: 1.2;
+    @include laptop {
       font-size: 1rem;
     }
     &--buttons {

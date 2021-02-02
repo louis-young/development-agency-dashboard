@@ -1,5 +1,7 @@
 import React from "react";
 
+import { slugifyString } from "../../utilities/utilities";
+
 import Loading from "../Loading/Loading";
 
 import "./Table.scss";
@@ -22,7 +24,7 @@ const Table = ({ loading, error, headers, items, item: Item }) => {
       <thead>
         <tr className="table__row">
           {headers.map((header) => (
-            <th className={`table__header table__header--${header.toLowerCase()}`} key={header}>
+            <th className={`table__header table__header--${slugifyString(header)}`} key={header}>
               {header}
             </th>
           ))}

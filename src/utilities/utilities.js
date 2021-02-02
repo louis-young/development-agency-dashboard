@@ -56,4 +56,12 @@ const getActiveLink = (location) => {
   return activeLink;
 };
 
-export { getTimeOfDay, searchArrayOfObjects, getActiveLink };
+const slugifyString = (string) => {
+  const lowerCaseString = string.toLowerCase();
+
+  const hyphenatedString = lowerCaseString.replace(" ", "-");
+
+  return hyphenatedString;
+};
+
+export { getTimeOfDay, searchArrayOfObjects, getActiveLink, slugifyString };

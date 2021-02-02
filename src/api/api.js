@@ -13,18 +13,18 @@ const getCollection = async (name) => {
 };
 
 const addDocument = async (collection, document) => {
-  const timestamp = Date.now();
+  const created = Date.now();
 
-  await database.collection(collection).add({ ...document, created: timestamp, modified: timestamp });
+  await database.collection(collection).add({ ...document, created, modified: created });
 };
 
 const editDocument = async (collection, document) => {
-  const timestamp = Date.now();
+  const modified = Date.now();
 
   await database
     .collection(collection)
     .doc(document.id)
-    .update({ ...document, modified: timestamp });
+    .update({ ...document, modified });
 };
 
 const deleteDocument = async (collection, id) => {

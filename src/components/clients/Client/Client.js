@@ -31,7 +31,11 @@ const Client = ({ item }) => {
 
   return (
     <tr className="table__row">
-      <td className="table__cell">{company}</td>
+      <td className="table__cell">
+        <Link to={`${ROUTES.CLIENTS}/${id}`} className="table__link">
+          {company}
+        </Link>
+      </td>
       <td className="table__cell">{contact}</td>
       <td className="table__cell">
         <a className="table__link" href={`mailto:${email}`}>

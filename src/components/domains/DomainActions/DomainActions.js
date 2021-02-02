@@ -14,8 +14,6 @@ import Loading from "../../Loading/Loading";
 const initialFields = {
   company: "",
   domain: "",
-  email: "",
-  name: "",
   platform: "",
   renewal: "",
 };

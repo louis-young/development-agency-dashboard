@@ -48,6 +48,11 @@ const Client = () => {
       return;
     }
 
+    if (clientProjects.length) {
+      alert(`Please first delete all projects associated with ${company}.`);
+      return;
+    }
+
     if (!window.confirm(`Are you sure you want to delete ${company}?`)) {
       return;
     }

@@ -3,9 +3,11 @@
     $height: 45px;
     display: inline-grid;
     grid-template-columns: 1fr;
-    grid-gap: 1rem;
+    grid-gap: 0.75rem;
+    margin-bottom: 0.5rem;
     @include laptop {
       height: $height;
+      margin-bottom: unset;
       display: flex;
       align-items: center;
       justify-content: space-between;

@@ -13,10 +13,10 @@
   &__page {
     overflow-y: scroll;
     padding: 1.5rem;
-    height: calc((100vh - $mobile-header-height));
+    height: calc((100vh - #{$mobile-header-height}));
     @include laptop {
       padding: 1.5rem 2rem;
-      height: calc((100vh - $desktop-header-height));
+      height: calc((100vh - #{$desktop-header-height}));
     }
   }
 }

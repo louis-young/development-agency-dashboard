@@ -30,7 +30,13 @@ const searchArrayOfObjects = (array, query) => {
   const lowerCaseQuery = query.toLowerCase();
 
   const results = array.filter((item) => {
-    const match = Object.values(item).some((value) => value.toLowerCase().includes(lowerCaseQuery));
+    const match = Object.values(item).some((value) => {
+      if (typeof value !== "string") {
+        return false;
+      }
+
+      return value.toLowerCase().includes(lowerCaseQuery);
+    });
 
     return match;
   });

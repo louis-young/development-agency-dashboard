@@ -18,7 +18,7 @@ const Project = ({ item }) => {
   const currentClient = clients?.find(({ id }) => id === client);
 
   if (!currentClient) {
-    return <Loading />;
+    return <Loading inline />;
   }
 
   const { company } = currentClient;

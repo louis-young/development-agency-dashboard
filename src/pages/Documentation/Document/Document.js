@@ -19,7 +19,7 @@ const Document = () => {
   const { documentation, deleteMutation } = useContext(DocumentationContext);
 
   if (!documentation) {
-    return <Loading />;
+    return <Loading inline />;
   }
 
   const document = documentation.find((document) => document.id === id);

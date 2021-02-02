@@ -23,7 +23,7 @@ const Client = () => {
   const { domains } = useContext(DomainsContext);
 
   if (!clients) {
-    return <Loading />;
+    return <Loading inline />;
   }
 
   const client = clients.find((client) => client.id === id);

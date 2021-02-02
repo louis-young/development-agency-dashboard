@@ -22,7 +22,7 @@ const Project = () => {
   const { clients } = useContext(ClientsContext);
 
   if (!projects || !clients || !domains) {
-    return <Loading />;
+    return <Loading inline />;
   }
 
   const project = projects.find((project) => project.id === id);

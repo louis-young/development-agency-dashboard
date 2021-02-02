@@ -5,7 +5,10 @@
 
 .logo {
   @extend %hover;
-  width: 50px;
+  width: 40px;
+  @include laptop {
+    width: 50px;
+  }
   &--dark {
     filter: brightness(0) saturate(100%) invert(39%) sepia(53%) saturate(5458%) hue-rotate(222deg) brightness(90%)
       contrast(84%);

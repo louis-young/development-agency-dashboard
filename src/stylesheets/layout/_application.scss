@@ -2,16 +2,21 @@
   background: #f7f7f7;
   &__layout {
     min-height: 100vh;
-    padding-top: 72.5px;
+    padding-top: $mobile-header-height;
     display: grid;
     grid-template-columns: 90px 1fr;
     @include laptop {
       grid-template-columns: 295px 1fr;
+      padding-top: $desktop-header-height;
     }
   }
   &__page {
-    padding: 1.5rem 2rem;
-    height: calc((100vh - 72.5px));
     overflow-y: scroll;
+    padding: 1.5rem;
+    height: calc((100vh - $mobile-header-height));
+    @include laptop {
+      padding: 1.5rem 2rem;
+      height: calc((100vh - $desktop-header-height));
+    }
   }
 }

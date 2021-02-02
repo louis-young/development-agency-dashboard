@@ -3,8 +3,6 @@
 @import "../../stylesheets/abstracts/extends";
 @import "../../stylesheets/base/typography";
 
-$height: 72.5px;
-
 .header {
   background: $primary-color;
   padding: 1rem 1.5rem;
@@ -16,7 +14,10 @@ $height: 72.5px;
   left: 0;
   width: 100%;
   z-index: 2;
-  height: $height;
+  height: $mobile-header-height;
+  @include laptop {
+    height: $desktop-header-height;
+  }
   &__button {
     padding: 1rem;
   }

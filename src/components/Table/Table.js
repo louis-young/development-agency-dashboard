@@ -3,6 +3,7 @@ import React from "react";
 import { slugifyString } from "../../utilities/utilities";
 
 import Loading from "../Loading/Loading";
+import Notification from "../Notification/Notification";
 
 import "./Table.scss";
 
@@ -12,7 +13,7 @@ const Table = ({ loading, error, headers, items, row: Row }) => {
   }
 
   if (error) {
-    return <p>Error loading items.</p>;
+    return <Notification message="Error loading items." />;
   }
 
   return (

@@ -4,7 +4,10 @@
     min-height: 100vh;
     padding-top: 72.5px;
     display: grid;
-    grid-template-columns: 295px 1fr;
+    grid-template-columns: 90px 1fr;
+    @include laptop {
+      grid-template-columns: 295px 1fr;
+    }
   }
   &__page {
     padding: 1.5rem 2rem;

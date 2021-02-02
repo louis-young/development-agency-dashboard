@@ -1,15 +1,23 @@
 .page {
   &__actions {
     $height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: $height;
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    @include laptop {
+      height: $height;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
   &__layout {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 3rem;
+    @include laptop {
+      grid-template-columns: 1fr 1fr;
+    }
   }
   &__buttons {
     width: fit-content;

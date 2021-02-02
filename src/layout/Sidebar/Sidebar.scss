@@ -28,6 +28,10 @@
     line-height: unset;
     font-weight: $medium;
     color: $medium-text;
+    display: none;
+    @include laptop {
+      display: initial;
+    }
   }
   &__icon {
     filter: invert(50%) sepia(0%) saturate(1983%) hue-rotate(316deg) brightness(91%) contrast(88%);

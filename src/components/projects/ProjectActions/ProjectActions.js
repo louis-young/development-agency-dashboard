@@ -117,7 +117,7 @@ const ProjectActions = () => {
             name="client"
             className="form__input form__input--select"
             onChange={handleInputChange}
-            value={editableProject?.client}
+            value={fields.client}
             required
           >
             {!editableProject && <option value="">Select a client...</option>}

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import { ClientsContext } from "../../../context/ClientsContext";
 import { DomainsContext } from "../../../context/DomainsContext";
+import { ProjectsContext } from "../../../context/ProjectsContext";
 
 import { ROUTES } from "../../../constants/constants";
 
@@ -14,11 +15,19 @@ const ClientRow = ({ item }) => {
 
   const { domains } = useContext(DomainsContext);
 
-  const clientDomains = domains?.filter((domain) => domain.company === id);
+  const { projects } = useContext(ProjectsContext);
+
+  const clientDomains = domains?.filter(({ company }) => company === id);
+
+  const clientProjects = projects?.filter(({ client }) => client === id);
 
   const deleteClient = () => {
     if (clientDomains.length) {
       alert(`Please first all delete domains associated with ${company}.`);
+      return;
+    }
+    if (clientProjects.length) {
+      alert(`Please first delete all projects associated with ${company}.`);
       return;
     }
 

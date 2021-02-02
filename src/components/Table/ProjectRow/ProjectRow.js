@@ -6,7 +6,6 @@ import { ProjectsContext } from "../../../context/ProjectsContext";
 import { ClientsContext } from "../../../context/ClientsContext";
 
 import { ROUTES } from "../../../constants/constants";
-import Loading from "../../Loading/Loading";
 
 const ProjectRow = ({ item }) => {
   const { id, client, stage, status, type, notes, action } = item;
@@ -18,7 +17,7 @@ const ProjectRow = ({ item }) => {
   const currentClient = clients?.find(({ id }) => id === client);
 
   if (!currentClient) {
-    return <Loading inline />;
+    return null;
   }
 
   const { company } = currentClient;

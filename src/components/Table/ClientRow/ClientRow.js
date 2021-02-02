@@ -18,7 +18,7 @@ const ClientRow = ({ item }) => {
 
   const deleteClient = () => {
     if (clientDomains.length) {
-      alert(`Please delete domains associated with ${company}.`);
+      alert(`Please first all delete domains associated with ${company}.`);
       return;
     }
 

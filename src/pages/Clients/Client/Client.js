@@ -44,7 +44,7 @@ const Client = () => {
 
   const deleteClient = () => {
     if (clientDomains.length) {
-      alert(`Please delete domains associated with ${company}.`);
+      alert(`Please first delete all domains associated with ${company}.`);
       return;
     }
 

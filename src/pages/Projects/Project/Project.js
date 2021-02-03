@@ -31,7 +31,7 @@ const Project = () => {
     return <p>No project found.</p>;
   }
 
-  const { stage, status, type, notes, action } = project;
+  const { stage, status, type, designer, developer, notes, action } = project;
 
   const client = clients.find((client) => client.id === project.client);
 
@@ -74,6 +74,16 @@ const Project = () => {
         <label className="form__label">
           Type
           <input className="form__input" name="type" type="text" value={type} readOnly />
+        </label>
+
+        <label className="form__label">
+          Designer
+          <input className="form__input" name="designer" type="text" value={designer} readOnly />
+        </label>
+
+        <label className="form__label">
+          Developer
+          <input className="form__input" name="developer" type="text" value={developer} readOnly />
         </label>
 
         <label className="form__label">

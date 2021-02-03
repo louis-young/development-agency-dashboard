@@ -16,6 +16,8 @@ const initialFields = {
   stage: "",
   status: "",
   type: "",
+  designer: "",
+  developer: "",
   notes: "",
   action: "",
 };
@@ -25,6 +27,10 @@ const STAGES = ["Research", "Concept", "Design", "Build", "Review", "Launch"];
 const STATUSES = ["Working", "Waiting", "Chasing", "Parked"];
 
 const TYPES = ["React", "Next", "Gatsby", "Static"];
+
+const DESIGNERS = ["Andy", "Alice", "Alex"];
+
+const DEVELOPERS = ["Bob", "Billy", "Barbra"];
 
 const ProjectForm = () => {
   const { id } = useParams();
@@ -177,6 +183,42 @@ const ProjectForm = () => {
             {TYPES.map((type) => (
               <option key={type} value={type}>
                 {type}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label className="form__label">
+          Designer
+          <select
+            name="designer"
+            className="form__input form__input--select"
+            onChange={handleInputChange}
+            value={fields.designer}
+            required
+          >
+            {!fields.designer && <option value="">Select a designer...</option>}
+            {DESIGNERS.map((designer) => (
+              <option key={designer} value={designer}>
+                {designer}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <label className="form__label">
+          Developer
+          <select
+            name="developer"
+            className="form__input form__input--select"
+            onChange={handleInputChange}
+            value={fields.developer}
+            required
+          >
+            {!fields.developer && <option value="">Select a developer...</option>}
+            {DEVELOPERS.map((developer) => (
+              <option key={developer} value={developer}>
+                {developer}
               </option>
             ))}
           </select>

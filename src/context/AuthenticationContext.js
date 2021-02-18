@@ -12,13 +12,17 @@ const AuthenticationProvider = ({ children }) => {
   useEffect(() => {
     setAuthenticating(true);
 
-    auth.onAuthStateChanged((user) => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
       setAuthenticating(false);
 
       if (!user) return;
 
       setUser(user);
     });
+
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   const createUser = (email, password) => {

@@ -1,16 +1,28 @@
 # Tracker
 
-React SPA front-end dashboard application integrated with Firebase backend and authentication.
+A holistic dashboard for development agencies to track customers and projects.
 
 ![# Tracker](documentation/tracker.jpg)
 
 ## Description
 
-This is an application which acts as a complete client, domain and project tracker for web development agencies. Users can add, edit and delete resources, as well as assigning domains to clients, and clients to projects. Features include a realtime markdown parser for the documentation section, full CRUD functionality and authentication.
+A holistic dashboard application that acts as a complete client, domain and project tracker for development agencies. Users can add, edit and delete resources, as well as assigning domains to clients, and clients to projects. Features include a realtime markdown parser for the documentation section, relational projects and authentication.
 
 ## Motivation
 
-I built this application to produce a real-world product which solves problems for web development agencies, whilst learning more about React, authentication, back-end interactions and overall application scale.
+This project was learn about building real-world applications that solve problems for businesses whilst learning more about React, authentication, network requests and overall application development.
+
+## Technologies
+
+- JavaScript.
+- React.
+- Sass (BEM).
+- React Query.
+- Firebase.
+
+---
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ### Available Scripts
 
